@@ -1,2 +1,8 @@
 # Ignore private planning directory
 plan/
+
+# Ignore VSCode workspace preferences
+.vscode/
+
+# Ignore Visual Studio preferences
+.vs/
