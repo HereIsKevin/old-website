@@ -1,0 +1,38 @@
+$display-font: 'Montserrat', sans-serif;
+$body-font: 'Raleway', sans-serif;
+$mono-font: 'Inconsolata', monospace;
+
+
+// Everything not styled uses the body font
+* {
+    font-family: $body-font;
+}
+
+// -----Links-----
+// a {
+    // :link {
+    //     color: ;
+    // }
+    // :visited {
+    //     color: : ;
+    // }
+    // :hover {
+    //     color: ;
+    // }
+    // :active {
+    //     color: : ;
+    // }
+// }
+
+body {
+    line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $display-font;
+    font-weight: 600;
+}
+
+code, code *, pre, pre * {
+    font-family: $mono-font;
+}
