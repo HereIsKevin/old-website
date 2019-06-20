@@ -84,7 +84,7 @@ typings/
 
 # =====Custom=====
 # Ignore private planning directory
-plan/
+# plan/
 
 # Ignore VSCode workspace preferences
 .vscode/
