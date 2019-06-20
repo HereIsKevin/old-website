@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='UTF-8'>
+        <meta name='viewport' content='width=device-width initial-scale=1'>
+        <title>content_template</title>
+    </head>
+    <body>
+        <h1>My Main Content</h1>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <h2>Reflection</h2>
+        <p>
+            Wait, did I just use the old fashioned lorem ipsum filler text. That's boring. Instead, today, I'm going to create my own, perfect filler text, but first, maybe it's time to play around with preformatted text (aka. the HTML &lt;pre&gt; tag)
+        </p>
+        <pre>
+    This is preformatted text.
+    It  is  really  boring,  though  as  you  can  see,
+    double  spacing  and  pressing  enter  to  create
+    new  lines  works.
+    The problem is preformatted text is unresponsive, and
+    is in an extremely ugly "code" font.
+This is an unindented line, unlike the other lines, just
+    to prove that indentation also works in this horrid
+    piece of HTML works.
+        </pre>
+        <p>
+            The preformatted text I just inserted is also an example of inserting HTML tags and stuff directly into markdown., which works wonderfully as expected.
+        </p>
+        <p>
+            Now, time to play with the headings, including all h1, h2, h3, h4, h5, and the tiny h6.
+        </p>
+        <h1>I'm a H1</h1>
+        <h2>I'm a H2</h2>
+        <h3>I'm a H3</h3>
+        <h4>I'm a H4</h4>
+        <h5>I'm a H5</h5>
+        <h6>I'm a H6</h6>
+        <br/>
+        <p>
+            Now, it's time to stop being foolish, and not play around with the headings and do something useful...yet still demonstrates a feature of this website. Notice the space that is right there before this paragraph. That was made with a line break, the HTML &lt;br/&gt; element, to put a new line (in this case, it was because I needed extra spacing).
+        </p>
+        <p>
+            Thinking about it, maybe I should try to do more random stuff, and experiment with the unexpected…like random code inserted all over the place, either through HTML (like the preformatted text and line breaks) or MarkDown (like the rest of document). So now, I'm going to insert some code…in MarkDown, obviously, as when using MarkDown, stick to it. When exported to HTML though, the &lt;code&gt; tags are also going to be wrapped in &lt;pre&gt; tags, to preserve formatting, or the code is just going to be a very long line of unreadable nonsense.
+        </p>
+        <pre>
+            <code lang='python'>
+import foo_bar
+from foo import bar
+import barfoo as bf
+from barf import *
+
+class Bar():
+    '''
+    Documentation is needed, so here's a comment...aka doc string
+    '''
+    def __init__(self):
+        # I'm so tired, here's a regular comment
+        # This function is useless, but for the purpose of not producing errors,
+        # here's a pass to the interpreter
+        pass
+
+    def foo(self):
+        '''Another useless doc string for documentation that does nothing'''
+        bf.bar('I'm too lazy to do anything, other than barf')
+        bar('All of these functions, actually do the same thing')
+        print('Here's a builtin function, wait for it, the barf is almost here')
+        barf_barf_barf('I just barfed three times, hence the function name')
+            </code>
+        </pre>
+        <p>
+            Now I need to find some way to use this hideous piece of code, which here's the new code, in HTML.
+        </p>
+        <pre>
+            <code class='language-python' lang='python'>
+from whatever_stupid_code_file import Bar
+
+# I'm so lazy, but still, here's the code to run that class
+if __name__ == '__main__':
+    a_bar = Bar()
+    a_bar.foo() # Which actually causes a barf
+            </code>
+        </pre>
+        <p>
+            I'm getting tired now, so maybe I'll continue writing this nonsense tomorrow...
+        </p>
+    </body>
+</html>
