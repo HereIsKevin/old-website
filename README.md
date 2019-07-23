@@ -1,2 +1,3 @@
-<!--# Kevin Feng here at [HereIsKevin.github.io](https://hereiskevin.github.io)-->
-Welcome to [HereIsKevin.github.io](https://hereiskevin.github.io), the personal GitHub Pages website of Kevin Feng. Don't judge by its plain appearance, as **something amazing is being built here**. Come here soon to see what's new later...
+# hereiskevin.github.io
+
+Welcome to source code of [hereiskevin.github.io](https://hereiskevin.github.io), the personal GitHub Pages website of Kevin Feng.
