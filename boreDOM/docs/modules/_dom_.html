@@ -1,0 +1,784 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>&quot;dom&quot; | boreDOM</title>
+	<meta name="description" content="Documentation for boreDOM">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">boreDOM</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../globals.html">Globals</a>
+				</li>
+				<li>
+					<a href="_dom_.html">&quot;dom&quot;</a>
+				</li>
+			</ul>
+			<h1>Module &quot;dom&quot;</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>The &quot;dom&quot; module is a simple, low-level, and fast DOM rendering system with
+							diffing built in for performance. In order to use it, download it from
+							<a href="https://github.com/HereIsKevin/boreDOM/releases/latest">GitHub</a> and extract
+						it, install the release with <code>npm install</code>, or build it from source.</p>
+					</div>
+					<p>The two main functions are <code>html</code>, which takes a string and turns it into a
+						HTML elements, and <code>render</code>, which updates a node with the output of HTML.
+					To begin, install boreDOM through the tarball:</p>
+					<p><strong>HTML (index.html)</strong></p>
+					<pre><code class="language-html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Hello, world<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;root&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;module&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;hello.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre>
+					<p><strong>JavaScript (hello.js)</strong></p>
+					<pre><code class="language-javascript"><span class="hljs-keyword">import</span> { dom } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;./path/to/boreDOM.js&quot;</span>;
+
+<span class="hljs-comment">// path is:</span>
+<span class="hljs-comment">//   - `./package/dist/index.esm.min.js` from extracted package</span>
+<span class="hljs-comment">//   - `./node_modules/boredom/dist/index.esm.min.js` from NPM</span>
+<span class="hljs-comment">//   - `./path/to/boreDOM/dist/index.esm.min.js` from source</span>
+
+dom.render(
+  <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;root&quot;</span>),
+  dom.html(<span class="hljs-string">&quot;&lt;p&gt;Hello, world from boreDOM!&lt;/p&gt;&quot;</span>)
+)</code></pre>
+					<p>Then serve the directory with the example through <code>python3 -m http.server</code>
+						or any other simple static server and got to <a href="http://localhost:8000">http://localhost:8000</a> or
+					whatever url the static server served to.</p>
+				</div>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section tsd-is-external">
+							<h3>Functions</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-external tsd-is-not-exported"><a href="_dom_.html#findkeepnodes" class="tsd-kind-icon">find<wbr>Keep<wbr>Nodes</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-external"><a href="_dom_.html#html" class="tsd-kind-icon">html</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-external tsd-is-not-exported"><a href="_dom_.html#iscommentnode" class="tsd-kind-icon">is<wbr>Comment<wbr>Node</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-external tsd-is-not-exported"><a href="_dom_.html#iselementnode" class="tsd-kind-icon">is<wbr>Element<wbr>Node</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-external tsd-is-not-exported"><a href="_dom_.html#isidenticalnode" class="tsd-kind-icon">is<wbr>Identical<wbr>Node</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-external tsd-is-not-exported"><a href="_dom_.html#isrelatednode" class="tsd-kind-icon">is<wbr>Related<wbr>Node</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-external tsd-is-not-exported"><a href="_dom_.html#issamenode" class="tsd-kind-icon">is<wbr>Same<wbr>Node</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-external tsd-is-not-exported"><a href="_dom_.html#istextnode" class="tsd-kind-icon">is<wbr>Text<wbr>Node</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-external tsd-is-not-exported"><a href="_dom_.html#patchattributes" class="tsd-kind-icon">patch<wbr>Attributes</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-external tsd-is-not-exported"><a href="_dom_.html#patchnode" class="tsd-kind-icon">patch<wbr>Node</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-external"><a href="_dom_.html#render" class="tsd-kind-icon">render</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-external tsd-is-not-exported"><a href="_dom_.html#sanitizenode" class="tsd-kind-icon">sanitize<wbr>Node</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section tsd-is-external">
+							<h3>Object literals</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-object-literal tsd-parent-kind-module tsd-is-external"><a href="_dom_.html#_testables" class="tsd-kind-icon">_testables</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-external">
+				<h2>Functions</h2>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-external tsd-is-not-exported">
+					<a name="findkeepnodes" class="tsd-anchor"></a>
+					<h3>find<wbr>Keep<wbr>Nodes</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-external tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">find<wbr>Keep<wbr>Nodes<span class="tsd-signature-symbol">(</span>oldElement<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Node</span>, newElement<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Node</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/HereIsKevin/boreDOM/blob/2d9e915/src/dom.ts#L171">src/dom.ts:171</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Compares the children of two nodes to find the nodes to keep</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>oldElement: <span class="tsd-signature-type">Node</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Original node to be updated</p>
+									</div>
+								</li>
+								<li>
+									<h5>newElement: <span class="tsd-signature-type">Node</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>New node to be compared to</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">[]</span></h4>
+							<p>Indexes for the child nodes to keep in oldElement and their new
+							locations in newElement</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-external">
+					<a name="html" class="tsd-anchor"></a>
+					<h3>html</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">html<span class="tsd-signature-symbol">(</span>template<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">DocumentFragment</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/HereIsKevin/boreDOM/blob/2d9e915/src/dom.ts#L93">src/dom.ts:93</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Generates HTML nodes as a document fragment from strings</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>template: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The string to be converted into HTML nodes</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">DocumentFragment</span></h4>
+							<p>The HTML nodes as a document fragment</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-external tsd-is-not-exported">
+					<a name="iscommentnode" class="tsd-anchor"></a>
+					<h3>is<wbr>Comment<wbr>Node</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-external tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Comment<wbr>Node<span class="tsd-signature-symbol">(</span>node<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Node</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">node</span><span class="tsd-signature-symbol"> is </span><span class="tsd-signature-type">Comment</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/HereIsKevin/boreDOM/blob/2d9e915/src/dom.ts#L81">src/dom.ts:81</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Type guard for checking of a node is a comment node</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>node: <span class="tsd-signature-type">Node</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Node to be checked</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">node</span><span class="tsd-signature-symbol"> is </span><span class="tsd-signature-type">Comment</span></h4>
+							<p>Node is comment node or not</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-external tsd-is-not-exported">
+					<a name="iselementnode" class="tsd-anchor"></a>
+					<h3>is<wbr>Element<wbr>Node</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-external tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Element<wbr>Node<span class="tsd-signature-symbol">(</span>node<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Node</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">node</span><span class="tsd-signature-symbol"> is </span><span class="tsd-signature-type">Element</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/HereIsKevin/boreDOM/blob/2d9e915/src/dom.ts#L69">src/dom.ts:69</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Type guard for checking of a node is an element node</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>node: <span class="tsd-signature-type">Node</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Node to be checked</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">node</span><span class="tsd-signature-symbol"> is </span><span class="tsd-signature-type">Element</span></h4>
+							<p>Node is element node or not</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-external tsd-is-not-exported">
+					<a name="isidenticalnode" class="tsd-anchor"></a>
+					<h3>is<wbr>Identical<wbr>Node</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-external tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Identical<wbr>Node<span class="tsd-signature-symbol">(</span>node1<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Node</span>, node2<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Node</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/HereIsKevin/boreDOM/blob/2d9e915/src/dom.ts#L128">src/dom.ts:128</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Helper function to check if two nodes are identical, checking to see if they
+									are equal, including their children</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>node1: <span class="tsd-signature-type">Node</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>First node to be checked</p>
+									</div>
+								</li>
+								<li>
+									<h5>node2: <span class="tsd-signature-type">Node</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Second node to be checked</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+							<p>First node is identical second node or not</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-external tsd-is-not-exported">
+					<a name="isrelatednode" class="tsd-anchor"></a>
+					<h3>is<wbr>Related<wbr>Node</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-external tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Related<wbr>Node<span class="tsd-signature-symbol">(</span>node1<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Node</span>, node2<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Node</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/HereIsKevin/boreDOM/blob/2d9e915/src/dom.ts#L157">src/dom.ts:157</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Helper function to check if two nodes are related, checking to see if they
+									have the same name</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>node1: <span class="tsd-signature-type">Node</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>First node to be checked</p>
+									</div>
+								</li>
+								<li>
+									<h5>node2: <span class="tsd-signature-type">Node</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Second node to be checked</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+							<p>First node has the same name as the second node or not</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-external tsd-is-not-exported">
+					<a name="issamenode" class="tsd-anchor"></a>
+					<h3>is<wbr>Same<wbr>Node</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-external tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Same<wbr>Node<span class="tsd-signature-symbol">(</span>node1<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Node</span>, node2<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Node</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/HereIsKevin/boreDOM/blob/2d9e915/src/dom.ts#L142">src/dom.ts:142</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Helper function to check if two nodes are the same, checking to see if they
+									are equal, excluding their children</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>node1: <span class="tsd-signature-type">Node</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>First node to be checked</p>
+									</div>
+								</li>
+								<li>
+									<h5>node2: <span class="tsd-signature-type">Node</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Second node to be checked</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+							<p>First node is the same as the second node or not</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-external tsd-is-not-exported">
+					<a name="istextnode" class="tsd-anchor"></a>
+					<h3>is<wbr>Text<wbr>Node</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-external tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Text<wbr>Node<span class="tsd-signature-symbol">(</span>node<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Node</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">node</span><span class="tsd-signature-symbol"> is </span><span class="tsd-signature-type">Text</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/HereIsKevin/boreDOM/blob/2d9e915/src/dom.ts#L57">src/dom.ts:57</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Type guard for checking of a node is a text node</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>node: <span class="tsd-signature-type">Node</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Node to be checked</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">node</span><span class="tsd-signature-symbol"> is </span><span class="tsd-signature-type">Text</span></h4>
+							<p>Node is text node or not</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-external tsd-is-not-exported">
+					<a name="patchattributes" class="tsd-anchor"></a>
+					<h3>patch<wbr>Attributes</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-external tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">patch<wbr>Attributes<span class="tsd-signature-symbol">(</span>oldNode<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Node</span>, newNode<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Node</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/HereIsKevin/boreDOM/blob/2d9e915/src/dom.ts#L208">src/dom.ts:208</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Compares the attributes of two nodes and updates to original node</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>oldNode: <span class="tsd-signature-type">Node</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Original node to be updated</p>
+									</div>
+								</li>
+								<li>
+									<h5>newNode: <span class="tsd-signature-type">Node</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>New node to be compared to</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-external tsd-is-not-exported">
+					<a name="patchnode" class="tsd-anchor"></a>
+					<h3>patch<wbr>Node</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-external tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">patch<wbr>Node<span class="tsd-signature-symbol">(</span>oldNode<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Node</span>, newNode<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Node</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/HereIsKevin/boreDOM/blob/2d9e915/src/dom.ts#L241">src/dom.ts:241</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Recursively compares two nodes and their children, patching, removing, and
+									inserting when necessary</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>oldNode: <span class="tsd-signature-type">Node</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Original node to be updated</p>
+									</div>
+								</li>
+								<li>
+									<h5>newNode: <span class="tsd-signature-type">Node</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>New node to be compared to</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-external">
+					<a name="render" class="tsd-anchor"></a>
+					<h3>render</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">render<span class="tsd-signature-symbol">(</span>oldElement<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Node</span>, newElement<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Node</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/HereIsKevin/boreDOM/blob/2d9e915/src/dom.ts#L284">src/dom.ts:284</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Diffs and updates a DOM node to be the same as another DOM node</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>oldElement: <span class="tsd-signature-type">Node</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Original DOM node</p>
+									</div>
+								</li>
+								<li>
+									<h5>newElement: <span class="tsd-signature-type">Node</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>New node for the original node to be updated into</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-external tsd-is-not-exported">
+					<a name="sanitizenode" class="tsd-anchor"></a>
+					<h3>sanitize<wbr>Node</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-external tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">sanitize<wbr>Node<span class="tsd-signature-symbol">(</span>element<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Node</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/HereIsKevin/boreDOM/blob/2d9e915/src/dom.ts#L103">src/dom.ts:103</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Removes empty text nodes, comment nodes, or other useless nodes</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>element: <span class="tsd-signature-type">Node</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Node or element to be sanitized</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-external">
+				<h2>Object literals</h2>
+				<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-module tsd-is-external">
+					<a name="_testables" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> _testables</h3>
+					<div class="tsd-signature tsd-kind-icon">_testables<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/HereIsKevin/boreDOM/blob/2d9e915/src/dom.ts#L304">src/dom.ts:304</a></li>
+						</ul>
+					</aside>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-external">
+						<a name="_testables.findkeepnodes-1" class="tsd-anchor"></a>
+						<h3>find<wbr>Keep<wbr>Nodes</h3>
+						<div class="tsd-signature tsd-kind-icon">find<wbr>Keep<wbr>Nodes<span class="tsd-signature-symbol">:</span> <a href="_dom_.html#findkeepnodes" class="tsd-signature-type">findKeepNodes</a></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/HereIsKevin/boreDOM/blob/2d9e915/src/dom.ts#L313">src/dom.ts:313</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-external">
+						<a name="_testables.html-1" class="tsd-anchor"></a>
+						<h3>html</h3>
+						<div class="tsd-signature tsd-kind-icon">html<span class="tsd-signature-symbol">:</span> <a href="_dom_.html#html" class="tsd-signature-type">html</a></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/HereIsKevin/boreDOM/blob/2d9e915/src/dom.ts#L308">src/dom.ts:308</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-external">
+						<a name="_testables.iscommentnode-1" class="tsd-anchor"></a>
+						<h3>is<wbr>Comment<wbr>Node</h3>
+						<div class="tsd-signature tsd-kind-icon">is<wbr>Comment<wbr>Node<span class="tsd-signature-symbol">:</span> <a href="_dom_.html#iscommentnode" class="tsd-signature-type">isCommentNode</a></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/HereIsKevin/boreDOM/blob/2d9e915/src/dom.ts#L307">src/dom.ts:307</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-external">
+						<a name="_testables.iselementnode-1" class="tsd-anchor"></a>
+						<h3>is<wbr>Element<wbr>Node</h3>
+						<div class="tsd-signature tsd-kind-icon">is<wbr>Element<wbr>Node<span class="tsd-signature-symbol">:</span> <a href="_dom_.html#iselementnode" class="tsd-signature-type">isElementNode</a></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/HereIsKevin/boreDOM/blob/2d9e915/src/dom.ts#L306">src/dom.ts:306</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-external">
+						<a name="_testables.isidenticalnode-1" class="tsd-anchor"></a>
+						<h3>is<wbr>Identical<wbr>Node</h3>
+						<div class="tsd-signature tsd-kind-icon">is<wbr>Identical<wbr>Node<span class="tsd-signature-symbol">:</span> <a href="_dom_.html#isidenticalnode" class="tsd-signature-type">isIdenticalNode</a></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/HereIsKevin/boreDOM/blob/2d9e915/src/dom.ts#L310">src/dom.ts:310</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-external">
+						<a name="_testables.isrelatednode-1" class="tsd-anchor"></a>
+						<h3>is<wbr>Related<wbr>Node</h3>
+						<div class="tsd-signature tsd-kind-icon">is<wbr>Related<wbr>Node<span class="tsd-signature-symbol">:</span> <a href="_dom_.html#isrelatednode" class="tsd-signature-type">isRelatedNode</a></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/HereIsKevin/boreDOM/blob/2d9e915/src/dom.ts#L312">src/dom.ts:312</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-external">
+						<a name="_testables.issamenode-1" class="tsd-anchor"></a>
+						<h3>is<wbr>Same<wbr>Node</h3>
+						<div class="tsd-signature tsd-kind-icon">is<wbr>Same<wbr>Node<span class="tsd-signature-symbol">:</span> <a href="_dom_.html#issamenode" class="tsd-signature-type">isSameNode</a></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/HereIsKevin/boreDOM/blob/2d9e915/src/dom.ts#L311">src/dom.ts:311</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-external">
+						<a name="_testables.istextnode-1" class="tsd-anchor"></a>
+						<h3>is<wbr>Text<wbr>Node</h3>
+						<div class="tsd-signature tsd-kind-icon">is<wbr>Text<wbr>Node<span class="tsd-signature-symbol">:</span> <a href="_dom_.html#istextnode" class="tsd-signature-type">isTextNode</a></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/HereIsKevin/boreDOM/blob/2d9e915/src/dom.ts#L305">src/dom.ts:305</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-external">
+						<a name="_testables.patchattributes-1" class="tsd-anchor"></a>
+						<h3>patch<wbr>Attributes</h3>
+						<div class="tsd-signature tsd-kind-icon">patch<wbr>Attributes<span class="tsd-signature-symbol">:</span> <a href="_dom_.html#patchattributes" class="tsd-signature-type">patchAttributes</a></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/HereIsKevin/boreDOM/blob/2d9e915/src/dom.ts#L314">src/dom.ts:314</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-external">
+						<a name="_testables.patchnode-1" class="tsd-anchor"></a>
+						<h3>patch<wbr>Node</h3>
+						<div class="tsd-signature tsd-kind-icon">patch<wbr>Node<span class="tsd-signature-symbol">:</span> <a href="_dom_.html#patchnode" class="tsd-signature-type">patchNode</a></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/HereIsKevin/boreDOM/blob/2d9e915/src/dom.ts#L315">src/dom.ts:315</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-external">
+						<a name="_testables.render-1" class="tsd-anchor"></a>
+						<h3>render</h3>
+						<div class="tsd-signature tsd-kind-icon">render<span class="tsd-signature-symbol">:</span> <a href="_dom_.html#render" class="tsd-signature-type">render</a></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/HereIsKevin/boreDOM/blob/2d9e915/src/dom.ts#L316">src/dom.ts:316</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-external">
+						<a name="_testables.sanitizenode-1" class="tsd-anchor"></a>
+						<h3>sanitize<wbr>Node</h3>
+						<div class="tsd-signature tsd-kind-icon">sanitize<wbr>Node<span class="tsd-signature-symbol">:</span> <a href="_dom_.html#sanitizenode" class="tsd-signature-type">sanitizeNode</a></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/HereIsKevin/boreDOM/blob/2d9e915/src/dom.ts#L309">src/dom.ts:309</a></li>
+							</ul>
+						</aside>
+					</section>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="../globals.html"><em>Globals</em></a>
+					</li>
+					<li class="label tsd-is-external">
+						<span>Internals</span>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="_index_.html">&quot;index&quot;</a>
+					</li>
+					<li class="label tsd-is-external">
+						<span>Externals</span>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="_component_.html">&quot;component&quot;</a>
+					</li>
+					<li class="current tsd-kind-module tsd-is-external">
+						<a href="_dom_.html">&quot;dom&quot;</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-external tsd-is-not-exported">
+						<a href="_dom_.html#findkeepnodes" class="tsd-kind-icon">find<wbr>Keep<wbr>Nodes</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-external">
+						<a href="_dom_.html#html" class="tsd-kind-icon">html</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-external tsd-is-not-exported">
+						<a href="_dom_.html#iscommentnode" class="tsd-kind-icon">is<wbr>Comment<wbr>Node</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-external tsd-is-not-exported">
+						<a href="_dom_.html#iselementnode" class="tsd-kind-icon">is<wbr>Element<wbr>Node</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-external tsd-is-not-exported">
+						<a href="_dom_.html#isidenticalnode" class="tsd-kind-icon">is<wbr>Identical<wbr>Node</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-external tsd-is-not-exported">
+						<a href="_dom_.html#isrelatednode" class="tsd-kind-icon">is<wbr>Related<wbr>Node</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-external tsd-is-not-exported">
+						<a href="_dom_.html#issamenode" class="tsd-kind-icon">is<wbr>Same<wbr>Node</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-external tsd-is-not-exported">
+						<a href="_dom_.html#istextnode" class="tsd-kind-icon">is<wbr>Text<wbr>Node</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-external tsd-is-not-exported">
+						<a href="_dom_.html#patchattributes" class="tsd-kind-icon">patch<wbr>Attributes</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-external tsd-is-not-exported">
+						<a href="_dom_.html#patchnode" class="tsd-kind-icon">patch<wbr>Node</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-external">
+						<a href="_dom_.html#render" class="tsd-kind-icon">render</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-external tsd-is-not-exported">
+						<a href="_dom_.html#sanitizenode" class="tsd-kind-icon">sanitize<wbr>Node</a>
+					</li>
+					<li class=" tsd-kind-object-literal tsd-parent-kind-module tsd-is-external">
+						<a href="_dom_.html#_testables" class="tsd-kind-icon">_testables</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>
