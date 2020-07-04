@@ -68,7 +68,7 @@
 					<h1>boreDOM</h1>
 				</a>
 				<p>Performant, simple, and lightweight templates and rendering for making the DOM boring.</p>
-				<p><code>boreDOM</code> requires ES6 features like proxies and will refuse to run on older browsers on Internet Explorer without extensive patching. Visit <a href="https://hereiskevin.github.io/boreDOM/docs/">https://hereiskevin.github.io/boreDOM/docs/</a> for documentation.</p>
+				<p><code>boreDOM</code> requires ES6 features and will refuse to run on older browsers on Internet Explorer without polyfills and transpiling. If you want to deploy <code>boreDOM</code> to older browsers, it is suggested you bundle it and then process it with Babel by yourself. Visit <a href="https://hereiskevin.github.io/boreDOM/docs/">https://hereiskevin.github.io/boreDOM/docs/</a> for documentation.</p>
 				<p><code>boreDOM</code> is beta software. The general algorithm for rendering implemented is stable and handles most cases well, while remaining fast enough to render at over 100 times per second. The <code>dom</code> module is stable enough for production, with full API documentation and some examples. The <code>component</code> module is still undergoing development, being stable enough for casual development, but still not quite ready for production.</p>
 				<p>Expect no API changes in the <code>dom</code> module, but be aware the API of the <code>component</code> module is subject to change, though it should remain close to the same. The old <code>element</code> module, the predecessor of the <code>component</code> module has been fully removed since <code>v0.6.0</code>, please use <code>v0.5.0</code> for the latest version of the <code>element</code> module if you require it. It is deprecated and should not be use in new code. The documentation for the <code>dom</code> module is mostly complete, though undergoing major changes, while the <code>component</code> module lacks proper documentation.</p>
 				<a href="#installing" id="installing" style="color: inherit; text-decoration: none;">
@@ -95,11 +95,19 @@
 					<li><p>Build the release</p>
 						<pre><code class="language-shell">npm run build:release</code></pre>
 					</li>
-					<li><p>Build the documentation (optional)</p>
+					<li><p>Build the documentation</p>
 						<pre><code class="language-shell">npm run build:docs</code></pre>
 					</li>
+					<li><p>Build the examples</p>
+						<pre><code class="language-shell">npm run build:examples</code></pre>
+					</li>
+					<li><p>Start the preview server</p>
+						<pre><code class="language-shell">npm run preview</code></pre>
+					</li>
+					<li><p>Go to <a href="https://localhost:5000/">https://localhost:5000/</a>, then <code>examples</code> for examples and <code>docs</code> for documentation</p>
+					</li>
 				</ol>
-				<p>The release files should be found in the <code>dist</code> folder, with the ESM being at <code>index.esm.min.js</code> and <code>index.esm.js</code>, and the CommonJS being at <code>index.cjs.min.js</code> and <code>index.cjs.js</code>. TypeScript type definitions are included with the files. The documentation can be found in the <code>docs</code> folder. To see the examples, run <code>npm run preview</code> and go to <a href="https://localhost:5000/">https://localhost:5000/</a>, and click <code>examples</code>. This is required as ESM modules cannot be loaded through the <code>file://</code> protocol.</p>
+				<p>The release files should be found in the <code>dist</code> folder, with the ESM being at <code>index.esm.min.js</code> and <code>index.esm.js</code>, and the CommonJS being at <code>index.cjs.min.js</code> and <code>index.cjs.js</code>. TypeScript type definitions are included with the files. The documentation can be found in the <code>docs</code> folder, while the examples should be in the <code>examples</code> folder.</p>
 				<a href="#overview" id="overview" style="color: inherit; text-decoration: none;">
 					<h2>Overview</h2>
 				</a>
