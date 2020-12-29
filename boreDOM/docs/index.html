@@ -7,6 +7,7 @@
 	<meta name="description" content="Documentation for boreDOM">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="assets/css/main.css">
+	<script async src="assets/js/search.js" id="search-script"></script>
 </head>
 <body>
 <header>
@@ -40,8 +41,6 @@
 							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
 							<input type="checkbox" id="tsd-filter-externals" checked />
 							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
-							<input type="checkbox" id="tsd-filter-only-exported" />
-							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
 						</div>
 					</div>
 					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
@@ -51,12 +50,7 @@
 	</div>
 	<div class="tsd-page-title">
 		<div class="container">
-			<ul class="tsd-breadcrumb">
-				<li>
-					<a href="globals.html">Globals</a>
-				</li>
-			</ul>
-			<h1>boreDOM</h1>
+			<h1>Project boreDOM</h1>
 		</div>
 	</div>
 </header>
@@ -72,7 +66,7 @@
 				<hr>
 				<p>Performant, simple, and lightweight templates and rendering for making the DOM boring.</p>
 				<p><code>boreDOM</code> requires ES6 features and will refuse to run on older browsers on Internet Explorer without polyfills and transpiling. If you want to deploy <code>boreDOM</code> to older browsers, it is suggested you bundle it and then process it with Babel by yourself. Visit <a href="https://hereiskevin.github.io/boreDOM/docs/">https://hereiskevin.github.io/boreDOM/docs/</a> for documentation.</p>
-				<p><code>boreDOM</code> is beta software. The general algorithm for rendering implemented is stable and handles most cases well, while remaining fast enough to render at over 100 times per second. The <code>dom</code> module is stable enough for production, with full API documentation and some examples. The <code>component</code> module is still undergoing development, being stable enough for casual development, but still not quite ready for production.</p>
+				<p><code>boreDOM</code> is beta software. The general algorithm for rendering implemented is stable and handles most cases well, while remaining fast enough to render at over 2000 times per second. The <code>dom</code> module is stable enough for production, with full API documentation and some examples. The <code>component</code> module is still undergoing development, being stable enough for casual development, but still not quite ready for production.</p>
 				<p>Expect no API changes in the <code>dom</code> module, but be aware the API of the <code>component</code> module is subject to change, though it should remain close to the same. The old <code>element</code> module, the predecessor of the <code>component</code> module has been fully removed since <code>v0.6.0</code>, please use <code>v0.5.0</code> for the latest version of the <code>element</code> module if you require it. It is deprecated and should not be use in new code. The documentation for the <code>dom</code> module is mostly complete, though undergoing major changes, while the <code>component</code> module lacks proper documentation.</p>
 				<a href="#installing" id="installing" style="color: inherit; text-decoration: none;">
 					<h2>Installing</h2>
@@ -116,47 +110,43 @@
 				</a>
 				<p>Check out <code>examples/todo</code> for a simple example powered by boreDOM. boreDOM is <strong>extremely</strong> simple. Just import <code>html</code> and <code>render</code> from the one file, then use <code>html</code> with a string or template to create the element, and <code>render</code> with the parent node and element to be rendered. <code>render</code> automatically diffs all elements, so it remains performant even in large applications.</p>
 				<p><strong>HTML:</strong></p>
-				<pre><code class="language-html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Hello, world!<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;root&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;module&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;hello.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre>
+				<pre><code class="language-html"><span style="color: #800000">&lt;!DOCTYPE</span><span style="color: #000000"> </span><span style="color: #FF0000">html</span><span style="color: #800000">&gt;</span>
+<span style="color: #800000">&lt;html&gt;</span>
+<span style="color: #000000">  </span><span style="color: #800000">&lt;head&gt;</span>
+<span style="color: #000000">    </span><span style="color: #800000">&lt;title&gt;</span><span style="color: #000000">Hello, world!</span><span style="color: #800000">&lt;/title&gt;</span>
+<span style="color: #000000">  </span><span style="color: #800000">&lt;/head&gt;</span>
+<span style="color: #000000">  </span><span style="color: #800000">&lt;body&gt;</span>
+<span style="color: #000000">    </span><span style="color: #800000">&lt;div</span><span style="color: #000000"> </span><span style="color: #FF0000">id</span><span style="color: #000000">=</span><span style="color: #0000FF">&quot;root&quot;</span><span style="color: #800000">&gt;&lt;/div&gt;</span>
+<span style="color: #000000">    </span><span style="color: #800000">&lt;script</span><span style="color: #000000FF"> </span><span style="color: #FF0000">type</span><span style="color: #000000FF">=</span><span style="color: #0000FF">&quot;module&quot;</span><span style="color: #000000FF"> </span><span style="color: #FF0000">src</span><span style="color: #000000FF">=</span><span style="color: #0000FF">&quot;hello.js&quot;</span><span style="color: #800000">&gt;&lt;/script&gt;</span>
+<span style="color: #000000">  </span><span style="color: #800000">&lt;/body&gt;</span>
+<span style="color: #800000">&lt;/html&gt;</span>
+</code></pre>
 				<p><strong>JavaScript:</strong></p>
-				<pre><code class="language-javascript"><span class="hljs-keyword">import</span> { dom } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;/dist/index.esm.js&quot;</span>;
+				<pre><code class="language-javascript"><span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">dom</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;/dist/index.esm.js&quot;</span><span style="color: #000000">;</span>
 
-<span class="hljs-comment">// or `const { dom } = require(&quot;/dist/index.cjs.js&quot;);` for CommonJS</span>
-<span class="hljs-comment">// or `const { dom } = require(&quot;boredom&quot;);` for Electron</span>
+<span style="color: #008000">// or `const { dom } = require(&quot;/dist/index.cjs.js&quot;);` for CommonJS</span>
+<span style="color: #008000">// or `const { dom } = require(&quot;boredom&quot;);` for Electron</span>
 
-<span class="hljs-keyword">const</span> name = <span class="hljs-string">&quot;world&quot;</span>;
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">name</span><span style="color: #000000"> = </span><span style="color: #A31515">&quot;world&quot;</span><span style="color: #000000">;</span>
 
-dom.render(<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;root&quot;</span>), dom.html(<span class="hljs-string">`Hello, <span class="hljs-subst">${name}</span>!`</span>));</code></pre>
+<span style="color: #001080">dom</span><span style="color: #000000">.</span><span style="color: #795E26">render</span><span style="color: #000000">(</span><span style="color: #001080">document</span><span style="color: #000000">.</span><span style="color: #795E26">getElementById</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;root&quot;</span><span style="color: #000000">), </span><span style="color: #001080">dom</span><span style="color: #000000">.</span><span style="color: #795E26">html</span><span style="color: #000000">(</span><span style="color: #A31515">`Hello, </span><span style="color: #0000FF">${</span><span style="color: #001080">name</span><span style="color: #0000FF">}</span><span style="color: #A31515">!`</span><span style="color: #000000">));</span>
+</code></pre>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 			<nav class="tsd-navigation primary">
 				<ul>
-					<li class="globals  ">
-						<a href="globals.html"><em>Globals</em></a>
+					<li class=" ">
+						<a href="modules.html">Exports</a>
 					</li>
-					<li class="label tsd-is-external">
-						<span>Internals</span>
+					<li class=" tsd-kind-namespace">
+						<a href="modules/component.html">component</a>
 					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_index_.html">&quot;index&quot;</a>
+					<li class=" tsd-kind-namespace">
+						<a href="modules/dom.html">dom</a>
 					</li>
-					<li class="label tsd-is-external">
-						<span>Externals</span>
-					</li>
-					<li class=" tsd-kind-module tsd-is-external">
-						<a href="modules/_component_.html">&quot;component&quot;</a>
-					</li>
-					<li class=" tsd-kind-module tsd-is-external">
-						<a href="modules/_dom_.html">&quot;dom&quot;</a>
+					<li class=" tsd-kind-namespace">
+						<a href="modules/memoized.html">memoized</a>
 					</li>
 				</ul>
 			</nav>
