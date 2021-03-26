@@ -39,6 +39,26 @@ body {
   margin: 0;
 }
 
+footer {
+  background-color: var(--color-secondary);
+}
+
+footer > .container {
+  color: var(--color-foreground);
+  font-family: var(--font-family);
+  font-size: var(--font-size-small);
+  text-align: center;
+  padding-bottom: var(--padding-wide);
+}
+
+footer > .curve {
+  padding: 0;
+  background-color: var(--color-secondary);
+  fill: var(--color-background);
+  height: calc(var(--padding-super) / 2);
+  width: 100%;
+}
+
 header {
   background-color: var(--color-background);
 }
