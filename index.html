@@ -1,231 +1,150 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <!--Meta tags-->
-        <meta charset="utf-8"/>
-        <meta name="description" content="Kevin Feng's personal website and open source projects"/>
-        <meta name="keywords" content="Kevin,Feng,kevin,feng,hereiskevin,here,is,github,code,projects,programming,python,html,css,javascript,c#,csharp,gui,toolkits,tools,resources"/>
-        <meta name="author" content="Kevin Feng"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <!--Title of webpage-->
-        <title>hereiskevin | Kevin Feng's personal website and open source projects</title>
-        <!--Importing stylesheets-->
-        <link href="/css/minimal.min.css" type="text/css" rel="stylesheet">
-        <link href="/css/custom.css" type="text/css" rel="stylesheet">
-        <!--Importing scripts, none yet-->
-        <script src="/js/minimal.min.js" type="text/javascript"></script>
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-148456780-1"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="author" content="Kevin Feng" />
+    <meta name="description" content="Kevin Feng's personal website" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Aspiring developer, student, and future CEO (hopefully) | Kevin Feng
+    </title>
+    <link rel="stylesheet" href="index.css" />
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-148456780-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
 
-            gtag('config', 'UA-148456780-1');
-        </script>
-    </head>
-    <body>
-        <nav>
-            <a href="/" class="home">HereIsKevin</a>
-            <span class="spacer"></span>
-            <a href="/projects/">Projects</a>
-            <a href="https://www.github.com/HereIsKevin/" class="github-mark"></a>
-        </nav>
-        <header>
-            <h1>Kevin Feng</h1>
-            <h4>Programmer, Nerd, Bookworm, and more</h4>
-        </header>
-        <main>
-            <section>
-                <h3>Warning, nothing here but filler text, website is still a work in progress</h3>
-                <hr>
-            </section>
-            <section>
-                <h1>My Main Content</h1>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </p>
-                <h2>Reflection</h2>
-                <p>
-                    Wait, did I just use the old fashioned lorem ipsum filler text. That's boring. Instead, today, I'm going to create my own, perfect filler text, but first, maybe it's time to play around with preformatted text (aka. the HTML &lt;pre&gt; tag)
-                </p>
-                <pre>
-    This is preformatted text.
-    It  is  really  boring,  though  as  you  can  see,
-    double  spacing  and  pressing  enter  to  create
-    new  lines  works.
-    The problem is preformatted text is unresponsive, and
-    is in an extremely ugly "code" font.
-This is an unindented line, unlike the other lines, just
-    to prove that indentation also works in this horrid
-    piece of HTML works.
-                </pre>
-                <p>
-                    The preformatted text I just inserted is also an example of inserting HTML tags and stuff directly into markdown., which works wonderfully as expected.
-                </p>
-                <p>
-                    Now, time to play with the headings, including all h1, h2, h3, h4, h5, and the tiny h6.
-                </p>
-                <h1>I'm a H1</h1>
-                <h2>I'm a H2</h2>
-                <h3>I'm a H3</h3>
-                <h4>I'm a H4</h4>
-                <h5>I'm a H5</h5>
-                <h6>I'm a H6</h6>
-                <br/>
-                <p>
-                    Now, it's time to stop being foolish, and not play around with the headings and do something useful...yet still demonstrates a feature of this website. Notice the space that is right there before this paragraph. That was made with a line break, the HTML &lt;br/&gt; element, to put a new line (in this case, it was because I needed extra spacing).
-                </p>
-                <p>
-                    Thinking about it, maybe I should try to do more random stuff, and experiment with the unexpected…like random code inserted all over the place, either through HTML (like the preformatted text and line breaks) or MarkDown (like the rest of document). So now, I'm going to insert some code…in MarkDown, obviously, as when using MarkDown, stick to it. When exported to HTML though, the &lt;code&gt; tags are also going to be wrapped in &lt;pre&gt; tags, to preserve formatting, or the code is just going to be a very long line of unreadable nonsense.
-                </p>
-                <pre>
-                    <code class="python">
-import foo_bar
-from foo import bar
-import barfoo as bf
-from barf import *
+      function gtag() {
+        dataLayer.push(arguments);
+      }
 
-class Bar():
-    '''
-    Documentation is needed, so here's a comment...aka doc string
-    '''
-    def __init__(self):
-        # I'm so tired, here's a regular comment
-        # This function is useless, but for the purpose of not producing errors,
-        # here's a pass to the interpreter
-        pass
-
-    def foo(self):
-        '''Another useless doc string for documentation that does nothing'''
-        bf.bar("I'm too lazy to do anything, other than barf")
-        bar('All of these functions, actually do the same thing')
-        print("Here's a builtin function, wait for it, the barf is almost here")
-        barf_barf_barf('I just barfed three times, hence the function name')
-                    </code>
-                </pre>
-                <p>
-                    Now I need to find some way to use this hideous piece of code, which here's the new code, in HTML.
-                </p>
-                <pre>
-                    <code class="python">
-from whatever_stupid_code_file import Bar
-
-# I'm so lazy, but still, here's the code to run that class
-if __name__ == '__main__':
-    a_bar = Bar()
-    a_bar.foo() # Which actually causes a barf
-                    </code>
-                </pre>
-                <p>
-                    I'm getting tired now, so maybe I'll continue writing this nonsense tomorrow...
-                </p>
-                <h2>Back from Yesterday</h2>
-                <p>
-                    Hi, I'm back from yesterday, so far, nothing much has happened, but now, I want to play around with other stuff in MarkDown. We covered headings and code yesterday, but there is much more to do before we are finished with the basics. An important thing that I forgot yesterday was making text <strong>bold</strong> and in <em>italics</em>. Bold text can be created by **surrounding some text with double asterisks** or __surrounding the text with double underscores__. Italics can be created in a similar manner, with text *surrounded with a single asterisk* or text _surrounded with a single underscore_.
-                </p>
-                <p>
-                    Many might ask, how do you type a underscore or asterisk, but it is simple, and done like most programming languages. You simply add a \ backslash in front. So * is actually \* and _ is actually \_. Of course, to type a backslash, you simply add a \ backslash in front of a \ backslash. So \ is actually \\.
-                </p>
-                <p>
-                    Remember the way I used HTML &lt;br/&gt; for a line break. Well, it can actually be created by putting &nbsp;&nbsp; two spaces at the end of the line like this.
-                    <br/>
-                    The line just broke, as you can see. Now, a line break can also be created by adding a \ backslash at the end of the line like this.
-                    <br/>
-                    The line just broke again, as you can see, both ways work perfectly.
-                </p>
-                <blockquote>
-                    Now, I do not want to be quoting anyone, but as you, the reader, can see, here is a blockquote, which is inserted with a &gt; at the be beginning of the line.
-                    <blockquote>
-                        Here's another blockquote, nestled in the first with another &gt;.
-                    </blockquote>
-                </blockquote>
-                <p>
-                    An unordered list, one with bullet points, can be created simply with * asterisks at the beginning of each line or a hyphen - like this. You can nestle them with indentation.
-                </p>
-                <ul>
-                    <li>List of Hyphens</li>
-                    <li>
-                        Item 1
-                        <ul>
-                            <li>
-                                Nestled item 1
-                                <ul>
-                                    <li>Nestled nestled item 1</li>
-                                </ul>
-                            </li>
-                            <li>
-                                Nestled item 2
-                            </li>
-                        </ul>
-                    </li>
-                    <li>Item 2</li>
-                </ul>
-                <ul>
-                    <li>List of Asterisks</li>
-                    <li>
-                        Item
-                        <ul>
-                            <li>
-                                Nestled item
-                                <ul>
-                                    <li>
-                                        Nestled nestled item
-                                        <ul>
-                                            <li>Nestled nestled nestled item</li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-                <p>
-                    An ordered list, one with numbers, can be created with lines enumerated with 1. or lines enumerated with 1), though note that you have to manually increment the number
-                </p>
-                <ol>
-                    <li>Numbered item (I'm using the 1. format)</li>
-                    <li>Numbered item (I'm not going to say the item number)</li>
-                </ol>
-                <ol>
-                    <li>1) Another item in a new list (I've switched to the 1) format)</li>
-                    <li>2) Just to say, the lists can be nestled, and mixed with unordered lists</li>
-                </ol>
-                <hr/>
-                <p>
-                    Did you just see that, it was a horizontal rule. A horizontal rule can be made with three hyphens ---, or with three asterisks ***. The one I just made was with three hyphens ---, now here's one made with three asterisks ***
-                </p>
-                <hr/>
-                <p>
-                    Finally, we're nearly finished with the basics. For now, here are some <a href='#'>links</a>, all named <a href='#'>link</a>, which having so many useless <a href='#'>links</a> is definately quite annoying, as they lead to nowhere. To create a link, you use the format [link name in brackets](followed by link url in parenthesis).
-                </p>
-                <p>
-                    Last but not least in the MarkDown basics, are inserting images, which is so similar to the links. To keep you from falling asleap, here's a random image to wake you up while reading this really long article on MarkDown and
-                    nonsense.
-                </p>
-                <img src='/static/clr-process.png' alt='A diagram of how compilation and execution for the .NET Framework works'/>
-                <p>
-                    Pretty boring image, huh. Well, now it's time to teach you how to insert something like that. First of all, the format is similar to that of a link, but with an extra exclamation point in the front. You use the format ![alternative text for screen readers goes here (aka. description or the image) in brackets](followed by the url of
-                    the image in parenthesis).
-                </p>
-                <p>
-                    Finally, you've made it through my random babbling and MarkDown tutorial. You now know all the basics. Meanwhile, to find out more, check out some of my newer tutorials. If you have questions, Google it, or refer to the <a href='https://spec.commonmark.org'>CommonMark spec</a> (here's a link again). If you are a developer using GitHub and need a MarkDown reference, use the <a href='https://github.github.com/gfm/'>Github Flavored MarkDown (GFM) spec</a>. Everything mentioned in this article is part of the CommonMark spec, but is also supported in GFM (...which has more features, including tables).
-                </p>
-                <p>
-                    If you need a good MarkDown editor, use <a href='https://code.visualstudio.com'>Visual Studio Code</a> or <a href='https://atom.io'>Atom</a>. If you don't mind using a stable though slightly buggy beta product that is nevertheless polished and has a lovely inline preview, try <a href='https://typora.io'>Typora</a>, which is free in beta, but eventually is going to be paid. A free, but extremely buggy and unpolished free and open source alternative/clone to Typora is <a href='https://marktext.app'>Mark Text</a>. Just for the sake of embracing open source, I suggest Visual Studio Code or Atom, as they are licensed under MIT (Mark Text, in my experience, is so bad, that I can't recommend it). Now get on with it and start writing something...in MarkDown.
-                </p>
-            </section>
-        </main>
-        <footer>
-            <hr>
-            <p>Copyright &copy; 2019 Kevin Feng</p>
-        </footer>
-        <script>
-            const result = confirm("Redirecting you to my GitHub profile...");
-
-            if (result) {
-                window.location.replace("https://github.com/HereIsKevin");
-            }
-        </script>
-    </body>
+      gtag("js", new Date());
+      gtag("config", "UA-148456780-1");
+    </script>
+  </head>
+  <body>
+    <nav>
+      <div class="container">
+        <h3 class="title"><a>Kevin Feng</a></h3>
+        <span class="spacer"></span>
+        <ul class="links">
+          <li><a href="https://github.com/HereIsKevin">GitHub</a></li>
+        </ul>
+      </div>
+    </nav>
+    <header>
+      <div class="container">
+        <h1 class="title">Hi, I'm Kevin</h1>
+        <h3 class="description">
+          Aspiring developer, student, and future CEO (hopefully)
+        </h3>
+      </div>
+      <svg class="curve" viewBox="0 0 600 100" preserveAspectRatio="none">
+        <path d="M 0,0 C 200,100 400,100 600,0" />
+      </svg>
+    </header>
+    <main>
+      <section>
+        <h2 class="title">My Projects</h2>
+        <div class="container">
+          <div class="tile">
+            <h3><a href="https://convoluta.github.io">Convoluta</a></h3>
+            <p>
+              A revolutionary ML-based solution to combat misinformation.
+              Powered by TensorFlow and spaCy, Convoluta is built upon cutting
+              edge technologies. Convoluta is set to launch around late 2021,
+              with the API set to launch around early 2022.
+            </p>
+          </div>
+          <div class="tile">
+            <h3>
+              <a href="https://github.com/HereIsKevin/neat"
+                ><b><i>neat</i></b></a
+              >
+            </h3>
+            <p>
+              Fast and minimalistic bash prompt with infinite options for
+              customizing. <b><i>neat</i></b> is extremely extensible, with a
+              simple API for adding new components and plugins. With extensive
+              caching, <b><i>neat</i></b> crushes Powerlevel10k and even
+              starship at performance.
+            </p>
+          </div>
+          <div class="tile">
+            <h3>
+              <a href="https://github.com/HereIsKevin/boreDOM">boreDOM</a>
+            </h3>
+            <p>
+              A lightweight and blazing-fast web components library built upon a
+              rock-solid rendering system. By only diffing possible dynamic
+              places, boreDOM does not need to diff the whole DOM tree,
+              resulting in near zero-cost rendering. boreDOM is comparable to
+              lit-html in performance and crushes React and Angular.
+            </p>
+          </div>
+          <div class="tile">
+            <h3>
+              <a href="https://github.com/boredomgames/GeoBounce">GeoBounce</a>
+            </h3>
+            <p>
+              Fun and simple, GeoBounce is a platformer game built by Boredom
+              Games and is much like Geometry Dash and Boxel Rebound. With a
+              custom-built game engine, GeoBounce sacrifices nothing for
+              performance and the enjoyment of the player. Each level is a
+              combination of challenges, fun, and much more, each more rewarding
+              than the last.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2 class="title">About Me</h2>
+        <div class="container column">
+          <div class="tile wide">
+            <h3>Introduction</h3>
+            <p>
+              Hi, I'm Kevin, as you already know. I'm currently a aspiring
+              developer, student, and future CEO (hopefully). Coding is my
+              passion and I seek to create pieces of software to improve the
+              lives of others, whether they are developers like me or just
+              ordinary people. In my spare time, I play the violin (though I
+              need to practice more), read books (voraciously), and learn (both
+              at school and elsewhere).
+            </p>
+          </div>
+          <div class="tile wide">
+            <h3>What I Know and What I'm Learning</h3>
+            <p>
+              Currently, I know Python and Web (HTML, CSS, JavaScript)
+              programming well. I enjoy using TypeScript and Sass when creating
+              frontends and Python or Node.js when creating backends. I know
+              Shell, C# and Tcl/Tk relatively well. Currently, I'm learning
+              Rust, Go, and the C family of languages (C, C++, Objective-C).
+            </p>
+          </div>
+          <div class="tile wide">
+            <h3>A Side Note</h3>
+            <p>
+              Please star my projects on GitHub if you find them inspiring,
+              helpful, or interesting so I can know they are appreciated. My
+              current project is Convoluta, which I hope to release around late
+              2021.
+            </p>
+          </div>
+          <div class="tile wide">
+            <h3>Contact</h3>
+            <p>
+              I'm unwilling to put my email here in fear of spam, so please open
+              an issue
+              <a href="https://github.com/HereIsKevin/HereIsKevin">here</a>
+              instead. I may be slow to respond at times, so please be patient.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>
+2
