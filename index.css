@@ -137,7 +137,7 @@ main > section > .container > .tile > h3 > a {
 }
 
 main > section > .container > .tile > h3 > a::after {
-  content: " → ";
+  content: " ➞ ";
   margin: -10px;
   opacity: 0;
   transition: 0.5s;
@@ -145,7 +145,7 @@ main > section > .container > .tile > h3 > a::after {
 
 main > section > .container > .tile > h3 > a:hover::after {
   color: var(--color-foreground);
-  content: " → ";
+  content: " ➞ ";
   font-family: var(--font-family);
   font-size: var(--font-size-medium);
   margin: 0;
