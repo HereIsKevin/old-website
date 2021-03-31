@@ -1,0 +1,18 @@
+{% extends "_base.html" %}
+
+{% block header %}
+  <h1 class="title">
+    {% block title %}
+      Hello, World!
+    {% endblock %}
+  </h1>
+  <div class="description">{{ DESCRIPTION }}</div>
+{% endblock %}
+
+{% block content %}
+  <p>
+    Hi! Welcome to my blog. I hope to begin writing articles on my thoughts and
+    ideas here in the future, mostly on topics related to programming. For now,
+    please take a look at my projects.
+  </p>
+{% endblock %}

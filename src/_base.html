@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="author" content="Kevin Feng" />
+    <meta name="description" content="Kevin Feng's personal website" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}{% endblock %} | Kevin Feng</title>
+    <link rel="stylesheet" href="/index.css" />
+    <link rel="icon" href="/favicon.ico" />
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-148456780-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+
+      gtag("js", new Date());
+      gtag("config", "UA-148456780-1");
+    </script>
+  </head>
+  <body>
+    <nav>
+      <div class="container">
+        <a class="title" href="/">Kevin Feng</a>
+        <span class="spacer"></span>
+        <ul class="links">
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="https://github.com/HereIsKevin">GitHub</a></li>
+        </ul>
+      </div>
+    </nav>
+    <header>
+      <div class="container">{% block header %}{% endblock %}</div>
+      <svg class="curve" viewBox="0 0 600 100" preserveAspectRatio="none">
+        <path d="M 0,0 C 200,100 400,100 600,0" />
+      </svg>
+    </header>
+    <main>{% block content %}{% endblock %}</main>
+    <footer>
+      <svg class="curve" viewBox="0 0 600 100" preserveAspectRatio="none">
+        <path d="M 0,0 C 200,100 400,100 600,0" />
+      </svg>
+      <div class="container">
+        Copyright © 2021 Kevin Feng. All rights reserved.
+      </div>
+    </footer>
+  </body>
+</html>
