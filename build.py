@@ -9,7 +9,7 @@ ARTICLES = [
         "url": "hello-world.html",
         "title": "Hello, World!",
         "description": "By Kevin Feng – March 31, 2021",
-    }
+    },
 ]
 
 ENVIRONMENT = Environment(loader=FileSystemLoader(SOURCES))
@@ -23,16 +23,18 @@ def render(path, values=None):
     template = ENVIRONMENT.get_template(file)
     output = Path.cwd() / file
 
+    if not output.parent.exists():
+        output.parent.mkdir(parents=True)
+
     output.write_text(template.render(**values))
 
 
 if __name__ == "__main__":
     render(SOURCES / "index.html")
-
-    if not BLOG.exists():
-        BLOG.mkdir()
-
     render(BLOG / "index.html", values={"ARTICLES": ARTICLES})
 
     for article in ARTICLES:
-        render(BLOG / article["url"], values={"DESCRIPTION": article["description"]})
+        render(
+            BLOG / article["url"],
+            values={"DESCRIPTION": article["description"]},
+        )
