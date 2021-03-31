@@ -228,4 +228,5 @@ nav > .container > .title {
   font-family: var(--font-family);
   font-size: var(--font-size-medium);
   font-weight: bold;
+  text-decoration: none;
 }
