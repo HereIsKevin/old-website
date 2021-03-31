@@ -28,6 +28,10 @@ def render(path, values=None):
 
 if __name__ == "__main__":
     render(SOURCES / "index.html")
+
+    if not BLOG.exists():
+        BLOG.mkdir()
+
     render(BLOG / "index.html", values={"ARTICLES": ARTICLES})
 
     for article in ARTICLES:
