@@ -120,6 +120,11 @@ main > section {
   max-width: 750px;
 }
 
+main > section > p {
+  font-family: var(--font-family);
+  font-size: var(--font-size-normal);
+}
+
 main > section > .container > .tile > p > a {
   color: var(--color-foreground);
   text-decoration: underline;
