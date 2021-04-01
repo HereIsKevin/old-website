@@ -1,3 +1,3 @@
 # hereiskevin.github.io
 
-Welcome to source code of [hereiskevin.github.io](https://hereiskevin.github.io), the personal GitHub Pages website of Kevin Feng.
+Source code of [hereiskevin.github.io](https://hereiskevin.github.io), the website and blog of [Kevin Feng](https://github.com/HereIsKevin). Please do not reuse any content or code from this repository without my consent.
