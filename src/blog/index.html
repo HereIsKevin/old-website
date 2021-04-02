@@ -14,7 +14,7 @@
     <h2 class="title">Articles</h2>
     <div class="container">
       {% for article in ARTICLES %}
-        <div class="tile">
+        <div class="tile wide">
           <h3><a href="/blog/{{ article.url }}">{{ article.title }}</a></h3>
           <p>{{ article.description }}</p>
         </div>
