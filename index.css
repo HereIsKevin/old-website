@@ -125,6 +125,11 @@ main > section > p {
   font-size: var(--font-size-normal);
 }
 
+main > section > p > a {
+  color: var(--color-foreground);
+  text-decoration: underline;
+}
+
 main > section > .container > .tile > p > a {
   color: var(--color-foreground);
   text-decoration: underline;
