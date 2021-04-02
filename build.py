@@ -1,3 +1,5 @@
+"""Build website and blog templates into webpages."""
+
 from pathlib import Path
 
 from jinja2 import Environment, FileSystemLoader
@@ -5,6 +7,11 @@ from jinja2 import Environment, FileSystemLoader
 SOURCES = Path.cwd() / "src"
 BLOG = SOURCES / "blog"
 ARTICLES = [
+    {
+        "url": "introducing-objective-rust.html",
+        "title": "Introducing Objective-Rust",
+        "description": "By Kevin Feng – April 1, 2021",
+    },
     {
         "url": "hello-world.html",
         "title": "Hello, World!",
@@ -16,6 +23,8 @@ ENVIRONMENT = Environment(loader=FileSystemLoader(SOURCES))
 
 
 def render(path, values=None):
+    """Render template and write output"""
+
     if values is None:
         values = {}
 
