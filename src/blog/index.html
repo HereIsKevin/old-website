@@ -12,9 +12,9 @@
 {% block content %}
   <section>
     <h2 class="title">Articles</h2>
-    <div class="container">
+    <div class="container column">
       {% for article in ARTICLES %}
-        <div class="tile wide">
+        <div class="tile">
           <h3><a href="/blog/{{ article.url }}">{{ article.title }}</a></h3>
           <p>{{ article.description }}</p>
         </div>
