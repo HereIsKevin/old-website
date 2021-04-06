@@ -8,6 +8,11 @@ SOURCES = Path.cwd() / "src"
 BLOG = SOURCES / "blog"
 ARTICLES = [
     {
+        "url": "objective-rust-nope.html",
+        "title": "Objective-Rust? Nope",
+        "description": "By Kevin Feng - April 5, 2021",
+    },
+    {
         "url": "introducing-objective-rust.html",
         "title": "Introducing Objective-Rust",
         "description": "By Kevin Feng – April 1, 2021",
