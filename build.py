@@ -3,6 +3,7 @@ from pathlib import Path
 from jinja2 import Environment, FileSystemLoader
 
 SOURCES = Path.cwd() / "src"
+OUTPUT = Path.cwd() / "public"
 BLOG = SOURCES / "blog"
 ARTICLES = [
     {
@@ -36,7 +37,7 @@ def render(path, values=None):
 
     file = str(path.relative_to(SOURCES))
     template = ENVIRONMENT.get_template(file)
-    output = Path.cwd() / file
+    output = OUTPUT / file
 
     if not output.parent.exists():
         output.parent.mkdir(parents=True)
