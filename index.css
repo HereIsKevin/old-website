@@ -121,6 +121,7 @@ main > section {
 }
 
 main > section > p {
+  color: var(--color-foreground);
   font-family: var(--font-family);
   font-size: var(--font-size-normal);
 }
