@@ -58,6 +58,7 @@ if __name__ == "__main__":
     render(SOURCES / "404.html")
     render(BLOG / "index.html", values={"ARTICLES": ARTICLES})
 
+    copy(Path.cwd() / ".nojekyll")
     copy(Path.cwd() / "favicon.ico")
     copy(Path.cwd() / "google6370c7d88b0b888c.html")
     copy(Path.cwd() / "index.css")
