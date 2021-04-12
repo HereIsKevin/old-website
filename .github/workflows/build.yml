@@ -34,3 +34,4 @@ jobs:
         with:
           branch: master
           folder: /public/
+          commit-message: 🔨 Build templates into pages
