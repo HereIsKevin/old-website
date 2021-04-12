@@ -1,3 +1,4 @@
+import shutil
 from pathlib import Path
 
 from jinja2 import Environment, FileSystemLoader
@@ -31,6 +32,13 @@ ARTICLES = [
 ENVIRONMENT = Environment(loader=FileSystemLoader(SOURCES))
 
 
+def copy(path):
+    file = path.relative_to(Path.cwd())
+    output = OUTPUT / file
+
+    shutil.copy(path, output)
+
+
 def render(path, values=None):
     if values is None:
         values = {}
@@ -49,6 +57,10 @@ if __name__ == "__main__":
     render(SOURCES / "index.html")
     render(SOURCES / "404.html")
     render(BLOG / "index.html", values={"ARTICLES": ARTICLES})
+
+    copy(Path.cwd() / "favicon.ico")
+    copy(Path.cwd() / "google6370c7d88b0b888c.html")
+    copy(Path.cwd() / "index.css")
 
     for article in ARTICLES:
         render(
