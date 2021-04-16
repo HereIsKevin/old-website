@@ -25,4 +25,4 @@ def build():
 
 
 def start():
-    python_module("http.server")
+    python_module("http.server --directory ./public/")
