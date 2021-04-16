@@ -8,14 +8,19 @@ OUTPUT = Path.cwd() / "public"
 BLOG = SOURCES / "blog"
 ARTICLES = [
     {
+        "url": "my-journey-in-programming.html",
+        "title": "My Journey in Programming",
+        "description": "By Kevin Feng – April, 15, 2021",
+    },
+    {
         "url": "thoughts-on-go.html",
-        "title": "Thoughts On Go",
-        "description": "By Kevin Feng - April 12, 2021",
+        "title": "Thoughts on Go",
+        "description": "By Kevin Feng – April 12, 2021",
     },
     {
         "url": "objective-rust-nope.html",
         "title": "Objective-Rust? Nope",
-        "description": "By Kevin Feng - April 5, 2021",
+        "description": "By Kevin Feng – April 5, 2021",
     },
     {
         "url": "introducing-objective-rust.html",
