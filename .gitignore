@@ -139,3 +139,6 @@ cython_debug/
 
 # Sublime Text project
 .subl/
+
+# Generated pages
+public/
