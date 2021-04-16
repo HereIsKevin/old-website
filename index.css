@@ -12,8 +12,9 @@
   --font-size-super: 3rem;
 
   --color-background: #ffffff;
-  --color-secondary: #efefef;
-  --color-foreground: #000000;
+  --color-secondary: #eeeeee;
+  --color-foreground: #111111;
+  --color-important: #113377;
 
   --padding-thin: 5px;
   --padding-normal: 10px;
@@ -29,9 +30,10 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-background: #000000;
-    --color-secondary: #323232;
+    --color-background: #111111;
+    --color-secondary: #333333;
     --color-foreground: #ffffff;
+    --color-important: #cceeff;
   }
 }
 
@@ -128,12 +130,12 @@ main > section > p {
 }
 
 main > section > p > a {
-  color: var(--color-foreground);
+  color: var(--color-important);
   text-decoration: underline;
 }
 
 main > section > .container > .tile > p > a {
-  color: var(--color-foreground);
+  color: var(--color-important);
   text-decoration: underline;
 }
 
@@ -164,7 +166,7 @@ main > section > .container > .tile > h3 {
 }
 
 main > section > .container > .tile > h3 > a {
-  color: var(--color-foreground);
+  color: var(--color-important);
   text-decoration: none;
 }
 
@@ -176,7 +178,7 @@ main > section > .container > .tile > h3 > a::after {
 }
 
 main > section > .container > .tile > h3 > a:hover::after {
-  color: var(--color-foreground);
+  color: var(--color-important);
   content: " ➞ ";
   font-family: var(--font-family);
   font-size: var(--font-size-medium);
