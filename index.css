@@ -166,7 +166,7 @@ main > section > .container > .tile > h3 {
 }
 
 main > section > .container > .tile > h3 > a {
-  color: var(--color-important);
+  color: var(--color-foreground);
   text-decoration: none;
 }
 
@@ -178,7 +178,7 @@ main > section > .container > .tile > h3 > a::after {
 }
 
 main > section > .container > .tile > h3 > a:hover::after {
-  color: var(--color-important);
+  color: var(--color-foreground);
   content: " ➞ ";
   font-family: var(--font-family);
   font-size: var(--font-size-medium);
