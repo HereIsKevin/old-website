@@ -60,6 +60,7 @@ def render(path, values=None):
 
 if __name__ == "__main__":
     render(SOURCES / "index.html")
+    render(SOURCES / "old.html")
     render(SOURCES / "404.html")
     render(BLOG / "index.html", values={"ARTICLES": ARTICLES})
 
