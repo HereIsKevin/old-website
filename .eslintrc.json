@@ -1,0 +1,25 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": ["./tsconfig.json"]
+  },
+  "plugins": ["@typescript-eslint"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "plugin:@typescript-eslint/strict",
+    "plugin:astro/recommended"
+  ],
+  "overrides": [
+    {
+      "files": ["*.astro"],
+      "parser": "astro-eslint-parser",
+      "parserOptions": {
+        "parser": "@typescript-eslint/parser",
+        "extraFileExtensions": [".astro"]
+      }
+    }
+  ]
+}
