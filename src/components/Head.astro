@@ -1,11 +1,10 @@
 ---
 export interface Props {
-  title?: string
+  title: string
   description?: string
 }
 
-const { title = "Kevin Feng", description = "Kevin Feng's personal website" } =
-  Astro.props
+const { title, description = "Kevin Feng's personal website" } = Astro.props
 ---
 
 <!-- Metadata -->
