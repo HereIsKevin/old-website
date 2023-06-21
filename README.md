@@ -1,55 +1,23 @@
-# Astro Starter Kit: Basics
+# Hi, I'm Kevin
 
-```
-npm create astro@latest -- --template basics
-```
+Welcome to the third version of my website. Unlike the last two versions, this one builds on modern technologies like [Astro](https://astro.build/) and [TypeScript](https://www.typescriptlang.org/) instead of a MacGyver-style mishmash of scripts and templates.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## A Brief History
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+The original version of this website began taking shape around June 2019. After a brief burst of development, stagnation continued for a significant period. The classical "Lorem ipsum" placeholder text covered the front page while planned design changes went unimplemented.
 
-![basics](https://user-images.githubusercontent.com/4677417/186188965-73453154-fdec-4d6b-9c34-cb35c248ae5b.png)
+The website was hand-written with absolutely no templating involved. Packages used, like [minimal.css](https://github.com/HereIsKevin/minimal.css), were copy-and-pasted into the repository.
 
+![Original version of hereiskevin.github.io](/public/history/v1.png)
 
-## 🚀 Project Structure
+Later, as development restarted around March 2021, significant restructuring was needed to make the website workable again. Instead of making changes to the existing code, I threw all of it away. A new patchwork of [Jinja](https://palletsprojects.com/p/jinja/) templates compiled by Python scripts formed the basis of the website.
 
-Inside of your Astro project, you'll see the following folders and files:
+![Second version of the hereiskevin.github.io](/public/history/v2.png)
 
-```
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+Similar to last time, development quickly stagnated again. By August 2022, I was itching to improve the content and theme because it was cringy and visually bland.
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+However, this time, I procrastinated on making changes until nearly a year later, on June 2023. Thus ends my journey in the development of my website. Or at least for now.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## License
 
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:3000`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Similar to the previous version of this website, code and content for this website are **not** public domain. Please do not reuse any code or content from this repository without my explicit written consent.
