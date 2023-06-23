@@ -1,0 +1,87 @@
+---
+import Head from "../components/Head.astro"
+import Header from "../components/Header.astro"
+import "../styles/global.css"
+
+export interface Props {
+  title: string
+}
+
+const { title } = Astro.props
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <Head {title} />
+  </head>
+  <body>
+    <Header id="header" />
+    <main>
+      <section id="hero">
+        <div class="container">
+          <slot name="hero" />
+        </div>
+      </section>
+      <slot />
+    </main>
+  </body>
+</html>
+
+<style>
+  #header {
+    position: fixed;
+  }
+
+  #hero {
+    background-color: var(--color-accent);
+    color: rgb(255 255 255);
+  }
+
+  .container {
+    margin: auto;
+    max-width: var(--content-width);
+  }
+
+  .transition {
+    transition-property: all;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+  }
+
+  .accented {
+    --color-background: rgb(60 120 240);
+    --color-foreground: rgb(255 255 255);
+    --color-accent: rgb(255 255 255);
+    --color-overlay: rgb(60 120 240);
+    --color-border: rgb(255 255 255);
+  }
+</style>
+
+<script>
+  const header = document.getElementById("header")!
+  const hero = document.getElementById("hero")!
+
+  if (window.scrollY < hero.offsetHeight) {
+    header.classList.add("accented")
+  }
+
+  document.addEventListener(
+    "scroll",
+    () => {
+      const hasAccented = header.classList.contains("accented")
+
+      // Add transition afterwards to prevent flashing on load.
+      if (!header.classList.contains("transition")) {
+        header.classList.add("transition")
+      }
+
+      if (hasAccented && window.scrollY >= hero.offsetHeight) {
+        header.classList.remove("accented")
+      } else if (!hasAccented && window.scrollY < hero.offsetHeight) {
+        header.classList.add("accented")
+      }
+    },
+    { passive: true }
+  )
+</script>
