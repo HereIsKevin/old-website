@@ -1,3 +1,8 @@
 {
-  "extends": ["stylelint-config-standard", "stylelint-config-html/astro"]
+  "extends": ["stylelint-config-standard", "stylelint-config-html/astro"],
+  "rules": {
+    "custom-property-empty-line-before": null,
+    "declaration-empty-line-before": null,
+    "value-keyword-case": ["lower", { "ignoreProperties": ["--font"] }]
+  }
 }
