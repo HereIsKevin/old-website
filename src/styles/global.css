@@ -25,7 +25,7 @@
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (width <= 600px) {
   :root {
     --size-large: 1.15rem;
     --size-huge: 1.5rem;
