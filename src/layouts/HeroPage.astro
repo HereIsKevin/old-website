@@ -31,10 +31,15 @@ const { title } = Astro.props
 <style>
   #header {
     position: fixed;
+    z-index: 1;
   }
 
   #hero {
-    background-color: var(--color-accent);
+    background-attachment: fixed;
+    background-image: url(/public/voronoi.svg),
+      linear-gradient(rgb(60 120 240 / 90%), rgb(255 255 255));
+    background-position: center;
+    background-size: cover;
     color: rgb(255 255 255);
   }
 
@@ -50,10 +55,9 @@ const { title } = Astro.props
   }
 
   .accented {
-    --color-background: rgb(60 120 240);
     --color-foreground: rgb(255 255 255);
     --color-accent: rgb(255 255 255);
-    --color-overlay: rgb(60 120 240);
+    --color-overlay: rgb(60 120 240 / 75%);
     --color-border: rgb(255 255 255);
   }
 </style>
