@@ -1,0 +1,40 @@
+---
+import type { HTMLAttributes } from "astro/types"
+
+import "../styles/global.css"
+
+export interface Props extends HTMLAttributes<"a"> {
+  href?: string
+  class?: string
+}
+
+const { href, class: className, ...props } = Astro.props
+
+const { pathname } = Astro.url
+const isActive = href === pathname || href == pathname.replace(/\/$/, "")
+---
+
+<li>
+  <a href={href} class:list={[className, { active: isActive }]} {...props}>
+    <slot />
+  </a>
+</li>
+
+<style>
+  a {
+    font-size: var(--size-medium);
+    color: var(--foreground);
+    text-decoration: none;
+  }
+
+  .active {
+    text-decoration-color: var(--accent);
+    text-decoration-line: underline;
+    text-decoration-thickness: 3px;
+    text-underline-position: under;
+  }
+
+  li:not(:last-child) {
+    margin-right: 20px;
+  }
+</style>

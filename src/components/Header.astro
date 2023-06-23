@@ -1,0 +1,66 @@
+---
+import HeaderLink from "./HeaderLink.astro"
+
+import "../styles/global.css"
+---
+
+<header>
+  <div class="container">
+    <a class="title" href="/">
+      <img alt="Kevin Feng" src="/favicon.svg" />
+    </a>
+    <span class="spacer"></span>
+    <nav>
+      <ul class="links">
+        <HeaderLink href="/projects">Projects</HeaderLink>
+        <HeaderLink href="/about">About</HeaderLink>
+        <HeaderLink href="/blog">Blog</HeaderLink>
+        <HeaderLink href="https://github.com/HereIsKevin">GitHub</HeaderLink>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<style>
+  header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+
+    background-color: var(--container);
+    backdrop-filter: blur(3px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    margin: auto;
+    padding: 5px;
+    max-width: var(--width);
+  }
+
+  .title {
+    height: 3rem;
+  }
+
+  .title img {
+    height: 100%;
+  }
+
+  .spacer {
+    flex-grow: 1;
+  }
+
+  .links {
+    display: flex;
+    margin: 0 10px 5px 0;
+    padding: 0;
+
+    list-style: none;
+  }
+
+  ul > *:not(:last-child) {
+    margin-right: 20px;
+  }
+</style>
