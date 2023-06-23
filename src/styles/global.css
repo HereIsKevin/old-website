@@ -1,5 +1,6 @@
 :root {
-  --width: 1200px;
+  --page-width: 1200px;
+  --content-width: 1000px;
 
   --font: Lato, sans-serif;
   --size-tiny: 0.5rem;
@@ -8,26 +9,26 @@
   --size-large: 1.25rem;
   --size-huge: 4rem;
 
-  --background: rgb(255 255 255);
-  --foreground: rgb(0 0 0);
-  --accent: rgb(60 120 240);
-  --container: rgb(255 255 255 / 75%);
-  --border: rgb(220 220 220);
+  --color-background: rgb(255 255 255);
+  --color-foreground: rgb(0 0 0);
+  --color-accent: rgb(60 120 240);
+  --color-overlay: rgb(255 255 255 / 75%);
+  --color-border: rgb(220 220 220);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: rgb(30 30 30);
-    --foreground: rgb(255 255 255);
-    --container: rgb(30 30 30 / 75%);
-    --border: rgb(100 100 100);
+    --color-background: rgb(30 30 30);
+    --color-foreground: rgb(255 255 255);
+    --color-overlay: rgb(30 30 30 / 75%);
+    --color-border: rgb(100 100 100);
   }
 }
 
 html {
   font-family: var(--font);
-  color: var(--foreground);
-  background-color: var(--background);
+  color: var(--color-foreground);
+  background-color: var(--color-background);
 }
 
 body {
