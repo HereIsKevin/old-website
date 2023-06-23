@@ -62,7 +62,7 @@ const { title } = Astro.props
   const header = document.getElementById("header")!
   const hero = document.getElementById("hero")!
 
-  if (window.scrollY < hero.offsetHeight) {
+  if (window.scrollY < hero.offsetHeight - header.offsetHeight) {
     header.classList.add("accented")
   }
 
@@ -70,15 +70,16 @@ const { title } = Astro.props
     "scroll",
     () => {
       const hasAccented = header.classList.contains("accented")
+      const threshold = hero.offsetHeight - header.offsetHeight
 
       // Add transition afterwards to prevent flashing on load.
       if (!header.classList.contains("transition")) {
         header.classList.add("transition")
       }
 
-      if (hasAccented && window.scrollY >= hero.offsetHeight) {
+      if (hasAccented && window.scrollY >= threshold) {
         header.classList.remove("accented")
-      } else if (!hasAccented && window.scrollY < hero.offsetHeight) {
+      } else if (!hasAccented && window.scrollY < threshold) {
         header.classList.add("accented")
       }
     },
