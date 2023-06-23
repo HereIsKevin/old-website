@@ -1,0 +1,35 @@
+:root {
+  --width: 1200px;
+
+  --font: Lato, sans-serif;
+  --size-tiny: 0.5rem;
+  --size-small: 0.75rem;
+  --size-medium: 1rem;
+  --size-large: 1.25rem;
+  --size-huge: 4rem;
+
+  --background: rgb(255 255 255);
+  --foreground: rgb(0 0 0);
+  --accent: rgb(60 120 240);
+  --container: rgb(255 255 255 / 75%);
+  --border: rgb(220 220 220);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: rgb(30 30 30);
+    --foreground: rgb(255 255 255);
+    --container: rgb(30 30 30 / 75%);
+    --border: rgb(100 100 100);
+  }
+}
+
+html {
+  font-family: var(--font);
+  color: var(--foreground);
+  background-color: var(--background);
+}
+
+body {
+  margin: 0;
+}
