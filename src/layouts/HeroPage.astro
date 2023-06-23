@@ -19,11 +19,17 @@ const { title } = Astro.props
     <Header id="header" />
     <main>
       <section id="hero">
-        <div class="container">
-          <slot name="hero" />
+        <div class="wrapper">
+          <div class="container">
+            <slot name="hero" />
+          </div>
         </div>
       </section>
-      <slot />
+      <section id="content">
+        <div class="container">
+          <slot />
+        </div>
+      </section>
     </main>
   </body>
 </html>
@@ -37,15 +43,28 @@ const { title } = Astro.props
   #hero {
     background-attachment: fixed;
     background-image: url("/voronoi.svg"),
-      linear-gradient(rgb(60 120 240 / 90%), rgb(255 255 255));
+      linear-gradient(rgb(60 120 240), rgb(255 255 255));
     background-position: center;
     background-size: cover;
     color: rgb(255 255 255);
   }
 
-  .container {
+  #hero .wrapper {
     margin: auto;
     max-width: var(--content-width);
+  }
+
+  #hero .wrapper .container {
+    padding: 200px 25px;
+  }
+
+  #content {
+    margin: auto;
+    max-width: var(--content-width);
+  }
+
+  #content .container {
+    margin: 25px;
   }
 
   .transition {

@@ -18,7 +18,20 @@ const { title } = Astro.props
   <body>
     <Header />
     <main>
-      <slot />
+      <div class="container">
+        <slot />
+      </div>
     </main>
   </body>
 </html>
+
+<style>
+  main {
+    margin: auto;
+    max-width: var(--content-width);
+  }
+
+  main .container {
+    margin: 25px;
+  }
+</style>
