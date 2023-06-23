@@ -42,8 +42,8 @@ const { title } = Astro.props
 
   #hero {
     background-attachment: fixed;
-    background-image: url("/voronoi.svg"),
-      linear-gradient(rgb(60 120 240), rgb(255 255 255));
+    background-color: rgb(60 120 240 / 75%);
+    background-image: url("/voronoi.svg");
     background-position: center;
     background-size: cover;
     color: rgb(255 255 255);
@@ -55,7 +55,7 @@ const { title } = Astro.props
   }
 
   #hero .wrapper .container {
-    padding: 200px 25px;
+    padding: 300px 25px;
   }
 
   #content {
