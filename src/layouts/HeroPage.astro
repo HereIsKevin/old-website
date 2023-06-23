@@ -25,11 +25,15 @@ const { title } = Astro.props
           </div>
         </div>
       </section>
-      <section id="content">
-        <div class="container">
-          <slot />
-        </div>
-      </section>
+      {
+        Astro.slots.has("default") && (
+          <section id="content">
+            <div class="container">
+              <slot />
+            </div>
+          </section>
+        )
+      }
     </main>
   </body>
 </html>
@@ -41,6 +45,7 @@ const { title } = Astro.props
   }
 
   #hero {
+    height: 100vh;
     background-attachment: fixed;
     background-color: rgb(60 120 240 / 75%);
     background-image: url("/voronoi.svg");
