@@ -68,7 +68,6 @@ const hasContent = Astro.slots.has("default")
   }
 
   #hero {
-    display: flex;
     height: 100dvh;
 
     background-attachment: fixed;
@@ -80,12 +79,15 @@ const hasContent = Astro.slots.has("default")
   }
 
   .hero-wrapper {
+    display: flex;
+    align-items: center;
     margin: auto;
     max-width: var(--content-width);
+    height: 100%;
   }
 
   .hero-container {
-    padding: 75px 25px;
+    padding: 25px;
   }
 
   #content {
