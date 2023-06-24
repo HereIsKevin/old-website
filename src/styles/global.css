@@ -3,11 +3,9 @@
   --content-width: 850px;
 
   --font: "Lato", sans-serif;
-  --size-small: 0.75rem;
-  --size-medium: 1rem;
-  --size-large: 1.25rem;
-  --size-huge: 2rem;
-  --size-gigantic: 4rem;
+  --size-small: 0.85rem;
+  --size-medium: 1.25rem;
+  --size-large: 4rem;
 
   --color-background: rgb(255 255 255);
   --color-foreground: rgb(0 0 0);
@@ -28,9 +26,8 @@
 
 @media screen and (width <= 600px) {
   :root {
-    --size-large: 1.15rem;
-    --size-huge: 1.5rem;
-    --size-gigantic: 3rem;
+    --size-medium: 1.15rem;
+    --size-large: 3rem;
   }
 }
 
