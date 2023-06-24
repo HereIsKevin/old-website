@@ -1,0 +1,24 @@
+---
+import HeroPage from "../layouts/HeroPage.astro"
+import "../styles/global.css"
+---
+
+<HeroPage title="404 | Kevin" image='url("/voronoi.svg")'>
+  <Fragment slot="hero">
+    <h1 class="title">404 Not Found</h1>
+    <p class="description">Nothing interesting here, go look somewhere else.</p>
+  </Fragment>
+</HeroPage>
+
+<style>
+  .title {
+    margin: 0;
+    font-size: var(--size-large);
+  }
+
+  .description {
+    margin: 0;
+    font-size: var(--size-medium);
+    line-height: calc(var(--size-medium) + 10px);
+  }
+</style>
