@@ -17,7 +17,7 @@ const hasContent = Astro.slots.has("default")
 <html lang="en">
   <head>
     {/* https://github.com/withastro/prettier-plugin-astro/issues/316 */}
-    {() => <Head {title} />}
+    {() => (<Head {title} />) as unknown}
   </head>
   <body>
     <Header id="header" class="header-accented" />
