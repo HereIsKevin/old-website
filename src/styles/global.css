@@ -11,17 +11,18 @@
 
   --color-background: rgb(255 255 255);
   --color-foreground: rgb(0 0 0);
-  --color-accent: rgb(60 120 240);
+  --color-primary: rgb(60 120 240);
+  --color-secondary: rgb(110 155 245);
+  --color-tertiary: rgb(220 220 220);
   --color-overlay: rgb(255 255 255 / 75%);
-  --color-border: rgb(220 220 220);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --color-background: rgb(30 30 30);
     --color-foreground: rgb(255 255 255);
+    --color-tertiary: rgb(100 100 100);
     --color-overlay: rgb(30 30 30 / 75%);
-    --color-border: rgb(100 100 100);
   }
 }
 
