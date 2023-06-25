@@ -12,7 +12,7 @@
     "check": "npm run check:astro && npm run check:tsc",
     "check:astro": "astro check",
     "check:tsc": "tsc --noEmit",
-    "clean": "rimraf ./dist/",
+    "clean": "rimraf ./.astro/ ./dist/",
     "format": "prettier --write ./.*.json ./*.{json,ts,md} ./src/**/*.{ts,css,astro,md}",
     "lint": "npm run lint:eslint && npm run lint:stylelint",
     "lint:eslint": "eslint --fix ./*.ts ./src/**/*.{ts,astro}",
