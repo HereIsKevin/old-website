@@ -1,0 +1,172 @@
+config:
+  room: welcome
+rooms:
+  welcome:
+    title: WELCOME TO USELESS
+    message: >
+      Useless, as its name states, is a very boring and very stupid game of
+      "adventure," "exploration," and (not) much more. All state is
+      automatically stored, and you will (obviously) not have a name. Each room
+      begins with all these obnoxious, ugly dashes, and please input what is in
+      the "[" and "]" when you see prompt like ">" or something similar. To
+      exit, just reload this page or whatever you use on your computer to
+      terminate an useless program. First stop, the strange laboratory.
+    action: laboratory
+  laboratory:
+    title: THE STRANGE LABORATORY
+    message: >
+      You are now in a very strange room. Piles of trash surround you, while
+      some sort of strange slug oozes along beside you. Do you wish to go to the
+      [touch] the slug, or just [move] along to the next room?
+    actions:
+      touch: slug
+      move: warehouse
+  slug:
+    title: THE SLUG
+    message: >
+      The slug sprays some sort of acid or poison at you. As it returns back to
+      its old, seemingly harmless state, your hand slowly dissolves away. Your
+      vision dims, and you feel your life ebbing away from you.
+    action: end
+  warehouse:
+    title: THE WAREHOUSE
+    message: >
+      For some reason, there is a large warehouse right next to the laboratory.
+      As you begin to explore your surroundings, a very large cargo container
+      drops out of nowhere and nearly crushes you to death. Do you wish to
+      attempt to [open] the container, or just [move] on?
+    actions:
+      open: container
+      move: jungle
+  container:
+    title: INSIDE THE CONTAINER
+    message: >
+      Inside the container, you find there is nothing but junk. Do you wish to
+      [search] the junk, or just [move] back to the warehouse?
+    actions:
+      search: search
+      move: warehouse
+  search:
+    title: SEARCHING THE CONTAINER
+    message: >
+      As you search the piles of junk in the container, you find nothing other
+      than junk (duh). Just as you are about to give, you hear a slight rustling
+      noise. Do you want to [search] for the source of the noise or just [move]
+      back to the warehouse?
+    actions:
+      search: noise
+      move: warehouse
+  noise:
+    title: SEARCHING FOR NOISE
+    message: >
+      As you search for the source of the noise, you find no sign of what made
+      the noise. Suddenly, some sort of strange, black creature jumps up behind
+      you and crushes your head. As your brain oozes out around you, everything
+      grows dim and you die.
+    action: end
+  jungle:
+    title: THE JUNGLE
+    message: >
+      When you exit the warehouse, you feel a blast of hot air. The air is
+      stifling and humid. Around you are tall trees covered in vines, hanging
+      ominously over you. A small dark trail stretches to the east, while a
+      well-worn path to a clearing faces the west. The jungle is silent, with
+      no sign of animals or insects around. Do you wish to follow the small
+      [trail], go to the [clearing], or [investigate] the lack of wildlife?
+    actions:
+      trail: trail
+      clearing: clearing
+      investigate: investigate
+  trail:
+    title: THE TRAIL
+    message: >
+      Hiking on the small, well-worn trail, you notice some strange-looking
+      plants off to the left, some with bulbous green heads spotted with vivid
+      red splotches. As you look around, you notice some large footprints off
+      the right, possibly created by some unknown creature. Do you want to
+      [investigate] to strange plants, [follow] the footprints, or [continue] on
+      the trail.
+    actions:
+      investigate: plants
+      follow: footprints
+      continue: trapdoor
+  plants:
+    title: INVESTIGATING THE PLANTS
+    message: >
+      You investigate the plants, poking them with a stick, sniffing their
+      strange odor, and watching the bulbous head pulsate. As you poke the heads
+      harder and harder with a stick, one explodes, spraying you with some sort
+      of strange substance. As your hands shrivel up before your eyes, crumbling
+      off into dust, your body disintegrates and you die.
+    action: end
+  footprints:
+    title: FOLLOWING THE FOOTPRINTS
+    message: >
+      As you follow the footprints, a strange sense of foreboding grows upon
+      you, making you regret taking this path. You notice a shadow behind you,
+      and wonder what it is. Do you want to [investigate] the shadow or go back
+      to the [trail]?
+    actions:
+      investigate: investigate
+      trail: trail
+  clearing:
+    title: THE CLEARING
+    message: >
+      You enter the clearing, but find nothing of interest. As you are about to
+      leave, you notice a strange shadow behind you. Do you want to
+      [investigate] the strange shadow or go [back]?
+    actions:
+      investigate: investigate
+      back: jungle
+  investigate:
+    title: INVESTIGATING THE STRANGENESS
+    message: >
+      As you attempt to investigate, a dark blur of fury pounces upon you,
+      ripping and shredding you. Lying mortally wounded on the ground, you that
+      mysterious, unknown entity was most likely the reason the jungle is
+      lacking in wildlife.
+    action: end
+  trapdoor:
+    title: THE TINY TRAPDOOR
+    message: >
+      The trail ends abruptly after a few miles. At first, you see nothing but a
+      the vegetation of the dense jungle around you, with no sign of any animals
+      or footprints. However, after some more observation, you notice the
+      outline of a small square on the ground. Brushing the soil away with your
+      hands, you uncover a trapdoor, which you slide open with some effort. Do
+      you want to [enter] the trapdoor or [force] your way through the jungle?
+    actions:
+      enter: slope
+      force: stalker
+  slope:
+    title: THE SLIPPERY SLOPE
+    message: >
+      As instant you slide into the trapdoor, your feet hit a slippery slope.
+      You struggle for a moment, attempting to hold on the the rim of the
+      trapdoor, but then you fall onto the slope. Immediately, you begin to
+      slide down the slippery stone slope. As everything flashes past you, you
+      occasionally see some roots from trees that have penetrated the stone from
+      above. Do you attempt to [hold] on to a root or [continue] sliding?
+    actions:
+      hold: hold
+      continue: entrance
+  stalker:
+    title: THE STALKER
+    message: You die
+    action: end
+  hold:
+    title: HOLDING ON
+    message: >
+      You attempt to hold on the the tree root, but you slip and continue to
+      slide down the slope.
+    action: entrance
+  entrance:
+    title: THE FORGOTTEN TEMPLE
+    message: >
+      As you slowly slide to a stop, you see a large, mysterious temple before
+      you. Illuminated by a soft green glow, you see that the temple's facade is
+      the likeness of some sort of evil creature. Just as you are about to enter
+      the temple's dark interior, you hear a roar of fury coming from far away,
+      echoing off the walls. Do you attempt to [enter] the temple or [escape]
+      from this evil place? (to be continued).
+    action: end
