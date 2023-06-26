@@ -1,10 +1,7 @@
 ---
 import type { HTMLAttributes } from "astro/types"
 
-export interface Props extends HTMLAttributes<"a"> {
-  href?: string
-  class?: string
-}
+export type Props = HTMLAttributes<"a">
 
 const { href, class: className, ...props } = Astro.props
 
