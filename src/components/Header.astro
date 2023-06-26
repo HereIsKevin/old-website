@@ -18,6 +18,7 @@ export type Props = HTMLAttributes<"header">
         <HeaderLink href="/about">About</HeaderLink>
         <HeaderLink href="/blog">Blog</HeaderLink>
         <HeaderLink href="https://github.com/HereIsKevin">GitHub</HeaderLink>
+        <HeaderLink id="egg" href="/egg" hidden>🥚</HeaderLink>
       </ul>
     </nav>
   </div>
@@ -31,7 +32,9 @@ export type Props = HTMLAttributes<"header">
 
     background-color: var(--color-overlay);
     backdrop-filter: blur(3px);
-    border-bottom: 1px solid var(--color-tertiary);
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: var(--color-tertiary);
   }
 
   .container {
@@ -56,7 +59,10 @@ export type Props = HTMLAttributes<"header">
 
   .links {
     display: flex;
-    margin: 0 10px 3px 0;
+    align-items: center;
+    margin: 0;
+    margin-bottom: 3px;
+    margin-right: 10px;
     padding: 0;
 
     list-style: none;
@@ -65,4 +71,16 @@ export type Props = HTMLAttributes<"header">
   ul > *:not(:last-child) {
     margin-right: 20px;
   }
+
+  #egg {
+    text-shadow: 0 0 1px var(--color-foreground);
+  }
 </style>
+
+<script>
+  const egg = document.getElementById("egg")!
+
+  if (window.localStorage.getItem("egg") === "enabled") {
+    egg.hidden = false
+  }
+</script>
