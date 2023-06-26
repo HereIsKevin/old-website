@@ -31,6 +31,14 @@ const isActive = href === pathname || href == pathname.replace(/\/$/, "")
     text-underline-position: under;
   }
 
+  a[target="_blank"]::after {
+    content: "↗";
+
+    vertical-align: top;
+    font-size: 0.65rem;
+    font-weight: bold;
+  }
+
   li:not(:last-child) {
     margin-right: 20px;
   }
