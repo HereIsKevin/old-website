@@ -1,0 +1,69 @@
+---
+import { getEntry } from "astro:content"
+
+import HeroPage from "../layouts/HeroPage.astro"
+
+const entry = await getEntry("egg", "game")
+const game = entry.data
+---
+
+<HeroPage title="Easter Egg | Kevin" image='url("/voronoi.svg")'>
+  <Fragment slot="hero">
+    <div id="game" hidden></div>
+    <div id="message">
+      <h1 class="title">🥚 Not Found</h1>
+      <p class="description">
+        Nothing interesting here, at least for now. Also, be sure to check out
+        the 404 Not Found page, it's awesome.
+      </p>
+    </div>
+  </Fragment>
+</HeroPage>
+
+<style>
+  #game {
+    width: 100%;
+    margin-top: 60px;
+    height: calc(100dvh - 110px);
+
+    background-color: rgb(60 120 240 / 75%);
+    backdrop-filter: blur(3px);
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(255 255 255);
+    border-radius: 5px;
+  }
+
+  .title {
+    margin: 0;
+    font-size: var(--size-large);
+  }
+
+  .description {
+    margin: 0;
+    font-size: var(--size-medium);
+    line-height: calc(var(--size-medium) + 10px);
+  }
+</style>
+
+<script define:vars={{ game }}>
+  window.game = game
+</script>
+
+<script>
+  import type { CollectionEntry } from "astro:content"
+
+  declare global {
+    interface Window {
+      game: CollectionEntry<"egg">
+    }
+  }
+
+  const game = document.getElementById("game")!
+  const message = document.getElementById("message")!
+
+  if (window.localStorage.getItem("egg") === "enabled") {
+    game.hidden = false
+    message.hidden = true
+  }
+</script>
