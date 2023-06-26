@@ -12,6 +12,9 @@
     "plugin:@typescript-eslint/strict",
     "plugin:astro/recommended"
   ],
+  "rules": {
+    "@typescript-eslint/no-unsafe-assignment": "off"
+  },
   "overrides": [
     {
       "files": ["*.astro"],
