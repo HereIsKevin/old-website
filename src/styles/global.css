@@ -7,20 +7,30 @@
   --size-medium: 1.25rem;
   --size-large: 4rem;
 
-  --color-background: rgb(255 255 255);
-  --color-foreground: rgb(0 0 0);
+  --color-white: rgb(255 255 255);
+  --color-white-transparent: rgb(255 255 255 / 75%);
+  --color-light-gray: rgb(220 220 220);
+  --color-gray: rgb(100 100 100);
+  --color-dark-gray: rgb(30 30 30);
+  --color-dark-gray-transparent: rgb(30 30 30 / 75%);
+  --color-black: rgb(0 0 0);
+
   --color-primary: rgb(60 120 240);
+  --color-primary-transparent: rgb(60 120 240 / 75%);
   --color-secondary: rgb(110 155 245);
-  --color-tertiary: rgb(220 220 220);
-  --color-overlay: rgb(255 255 255 / 75%);
+
+  --color-background: var(--color-white);
+  --color-foreground: var(--color-black);
+  --color-border: var(--color-light-gray);
+  --color-overlay: var(--color-white-transparent);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-background: rgb(30 30 30);
-    --color-foreground: rgb(255 255 255);
-    --color-tertiary: rgb(100 100 100);
-    --color-overlay: rgb(30 30 30 / 75%);
+    --color-background: var(--color-dark-gray);
+    --color-foreground: var(--color-white);
+    --color-border: var(--color-gray);
+    --color-overlay: var(--color-dark-gray-transparent);
   }
 }
 

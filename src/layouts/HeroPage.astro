@@ -42,13 +42,7 @@ const hasContent = Astro.slots.has("default")
         )
       }
     </main>
-    <Footer
-      {...!hasContent && {
-        background: "var(--color-primary)",
-        foreground: "rgb(255 255 255)",
-        border: "rgb(255 255 255)",
-      }}
-    />
+    <Footer id="footer" class:list={{ contentless: !hasContent }} />
   </body>
 </html>
 
@@ -65,10 +59,10 @@ const hasContent = Astro.slots.has("default")
   }
 
   .header-accented {
-    --color-foreground: rgb(255 255 255);
-    --color-primary: rgb(255 255 255);
-    --color-tertiary: rgb(255 255 255);
-    --color-overlay: rgb(60 120 240 / 75%);
+    --color-foreground: var(--color-white);
+    --color-primary: var(--color-white);
+    --color-border: var(--color-white);
+    --color-overlay: var(--color-primary-transparent);
   }
 
   #hero {
@@ -79,7 +73,7 @@ const hasContent = Astro.slots.has("default")
     background-image: var(--image);
     background-position: center;
     background-size: cover;
-    color: rgb(255 255 255);
+    color: var(--color-white);
   }
 
   .hero-wrapper {
@@ -102,6 +96,12 @@ const hasContent = Astro.slots.has("default")
 
   .content-container {
     margin: 25px;
+  }
+
+  #footer.contentless {
+    --color-background: var(--color-primary);
+    --color-foreground: var(--color-white);
+    --color-border: var(--color-white);
   }
 </style>
 
