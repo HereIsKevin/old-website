@@ -6,4 +6,9 @@ export default defineConfig({
   build: {
     inlineStylesheets: "auto",
   },
+  vite: {
+    build: {
+      assetsInlineLimit: 2048,
+    },
+  },
 })
