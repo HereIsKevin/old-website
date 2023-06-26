@@ -1,4 +1,12 @@
 {
   "astroAllowShorthand": false,
-  "semi": false
+  "semi": false,
+  "overrides": [
+    {
+      "files": ["*.yaml"],
+      "options": {
+        "proseWrap": "always"
+      }
+    }
+  ]
 }

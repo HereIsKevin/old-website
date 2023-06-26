@@ -70,8 +70,8 @@ rooms:
       When you exit the warehouse, you feel a blast of hot air. The air is
       stifling and humid. Around you are tall trees covered in vines, hanging
       ominously over you. A small dark trail stretches to the east, while a
-      well-worn path to a clearing faces the west. The jungle is silent, with
-      no sign of animals or insects around. Do you wish to follow the small
+      well-worn path to a clearing faces the west. The jungle is silent, with no
+      sign of animals or insects around. Do you wish to follow the small
       [trail], go to the [clearing], or [investigate] the lack of wildlife?
     actions:
       trail: trail
