@@ -18,6 +18,10 @@ Similar to last time, development quickly stagnated again. By August 2022, I was
 
 However, this time, I procrastinated on making changes until nearly a year later, on June 2023. Thus ends my journey in the development of my website. Or at least for now.
 
+## Used Technologies
+
+This website relies on quite a bit of open-source technology, more than Astro and TypeScript. PostCSS, Prettier, ESLint, and Stylelint are only a few. For example, this [Voronoi Editor](https://voronoi-editor.web.app/) generated the page backgrounds.
+
 ## License
 
 Similar to the previous version of this website, code and content for this website are **not** public domain. Please do not reuse any code or content from this repository without my explicit written consent.
