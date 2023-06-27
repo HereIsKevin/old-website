@@ -1,16 +1,19 @@
 ---
 import type { HTMLAttributes } from "astro/types"
 
-export type Props = HTMLAttributes<"a">
+export interface Props extends HTMLAttributes<"li"> {
+  href?: HTMLAttributes<"a">["href"]
+  target?: HTMLAttributes<"a">["target"]
+}
 
-const { href, class: className, ...props } = Astro.props
+const { href, target, ...props } = Astro.props
 
 const { pathname } = Astro.url
 const isActive = href === pathname || href == pathname.replace(/\/$/, "")
 ---
 
-<li>
-  <a {href} class:list={[className, { active: isActive }]} {...props}>
+<li {...props}>
+  <a {href} {target} class:list={{ active: isActive }}>
     <slot />
   </a>
 </li>
