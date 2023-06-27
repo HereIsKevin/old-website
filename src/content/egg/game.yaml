@@ -8,9 +8,12 @@ rooms:
       "adventure," "exploration," and (not) much more. All state is not
       automatically stored, and you will (obviously) not have a name. Each room
       contains this obnoxious, ugly, and slow message, and please input what is
-      in the "[" and "]" when you see prompt like ">" or something similar. To
-      exit, just reload this page or whatever you use on your computer to
-      terminate an useless program. First stop, the strange laboratory.
+      in the "[" and "]" into the prompt, which ">" or something similar. Of
+      course, you can't actually enter anything until the text has finished
+      printing. To confirm your choice, just press ENTER or click the prompt
+      button on the left. To exit, just reload this page or whatever you use on
+      your computer to terminate an useless program. First stop, the strange
+      laboratory.
     action: laboratory
   laboratory:
     heading: The Strange Laboratory
