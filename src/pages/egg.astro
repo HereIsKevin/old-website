@@ -16,7 +16,12 @@ const data = entry.data
       <div id="output"></div>
       <div id="prompt">
         <button id="submit">&gt;</button>
-        <input id="input" type="text" />
+        <input
+          id="input"
+          type="text"
+          placeholder="What do you want to do?"
+          aria-label="Prompt for action"
+        />
       </div>
       <template id="template">
         <div class="display">
@@ -121,6 +126,10 @@ const data = entry.data
     background-color: transparent;
     border-style: none;
     outline-style: none;
+  }
+
+  #input::placeholder {
+    color: var(--color-white);
   }
 
   .title {
