@@ -16,8 +16,8 @@ rooms:
     heading: The Strange Laboratory
     message: >-
       You are now in a very strange room. Piles of trash surround you, while
-      some sort of strange slug oozes along beside you. Do you wish to go to the
-      [touch] the slug, or just [move] along to the next room?
+      some sort of strange slug oozes along beside you. Do you wish to [touch]
+      the slug, or just [move] along to the next room?
     actions:
       touch: slug
       move: warehouse
