@@ -8,12 +8,18 @@ const egg = defineCollection({
     }),
     rooms: z.record(
       z.string(),
-      z.object({
-        title: z.string(),
-        message: z.string(),
-        action: z.string().optional(),
-        actions: z.record(z.string(), z.string()).optional(),
-      })
+      z
+        .object({
+          heading: z.string(),
+          message: z.string(),
+          action: z.string().optional(),
+          actions: z.record(z.string(), z.string()).optional(),
+        })
+        .refine(
+          (room) =>
+            (room.action && !room.actions) || (!room.action && room.actions),
+          "One of 'action' or 'actions' must exist."
+        )
     ),
   }),
 })
