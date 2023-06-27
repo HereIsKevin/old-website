@@ -2,7 +2,9 @@
   --page-width: 1000px;
   --content-width: 850px;
 
-  --font: "Lato", sans-serif;
+  --font-sans-serif: "Lato", sans-serif;
+  --font-monospace: "JetBrains Mono", monospace;
+
   --size-small: 0.85rem;
   --size-medium: 1.25rem;
   --size-large: 4rem;
@@ -42,7 +44,7 @@
 }
 
 html {
-  font-family: var(--font);
+  font-family: var(--font-sans-serif);
   color: var(--color-foreground);
   background-color: var(--color-background);
 }

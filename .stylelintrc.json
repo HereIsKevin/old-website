@@ -4,6 +4,6 @@
     "custom-property-empty-line-before": null,
     "declaration-block-no-redundant-longhand-properties": null,
     "declaration-empty-line-before": null,
-    "value-keyword-case": ["lower", { "ignoreProperties": ["--font"] }]
+    "value-keyword-case": ["lower", { "ignoreProperties": ["/--font-.+/"] }]
   }
 }
