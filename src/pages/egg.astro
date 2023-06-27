@@ -1,6 +1,9 @@
 ---
 import { getEntry } from "astro:content"
 
+import "@fontsource/jetbrains-mono/latin-400.css"
+import "@fontsource/jetbrains-mono/latin-700.css"
+
 import HeroPage from "../layouts/HeroPage.astro"
 
 const entry = await getEntry("egg", "game")
@@ -10,6 +13,7 @@ const data = entry.data
 <HeroPage title="Easter Egg | Kevin" image='url("/voronoi.svg")'>
   <Fragment slot="hero">
     <div id="game" hidden>
+      <div id="output"></div>
       <div id="prompt">
         <button id="submit">&gt;</button>
         <input id="input" type="text" />
@@ -33,17 +37,89 @@ const data = entry.data
 
 <style>
   #game {
-    width: 100%;
-    margin-top: 60px;
-    height: calc(100dvh - 110px);
+    --nav: 60px;
+    --margin: 25px;
+    --padding: 20px;
 
+    --radius: 5px;
+    --width: 1px;
+
+    /* navigation + top and bottom margins */
+    --offset: calc(var(--nav) + 2 * var(--margin));
+
+    display: flex;
+    flex-direction: column;
+    margin-top: var(--nav);
+    width: 100%;
+    height: calc(100dvh - var(--offset));
+
+    font-family: var(--font-monospace);
+    color: var(--color-white);
     background-color: var(--color-primary-transparent);
     backdrop-filter: blur(3px);
-    border-width: 1px;
+    border-width: var(--width);
     border-style: solid;
     border-color: var(--color-white);
-    border-radius: 5px;
+    border-radius: var(--radius);
+  }
+
+  #game #output {
+    flex-grow: 1;
     overflow: scroll;
+    padding: 20px;
+
+    border-bottom-width: var(--width);
+    border-bottom-style: solid;
+    border-bottom-color: var(--color-white);
+  }
+
+  #game #output .display:not(:last-child) {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom-width: var(--width);
+    border-bottom-style: solid;
+    border-bottom-color: var(--color-white);
+  }
+
+  #game #output .display .heading {
+    margin: 0;
+    margin-bottom: 5px;
+  }
+
+  #game #output .display .message {
+    margin: 0;
+  }
+
+  #game #prompt {
+    display: flex;
+    margin: 0;
+  }
+
+  #game #prompt #submit {
+    margin: 0;
+    padding: 10px;
+
+    font-family: var(--font-monospace);
+    font-size: 1rem;
+    color: var(--color-white);
+    background-color: transparent;
+    border-style: none;
+    border-bottom-left-radius: var(--radius);
+    border-right-width: var(--width);
+    border-right-style: solid;
+    border-right-color: var(--color-white);
+  }
+
+  #game #prompt #input {
+    flex-grow: 1;
+    margin: 0;
+    padding: 5px;
+
+    font-family: var(--font-monospace);
+    font-size: 1rem;
+    color: var(--color-white);
+    background-color: transparent;
+    outline-style: none;
   }
 
   .title {
@@ -73,6 +149,7 @@ const data = entry.data
 
   let query: ((action: string) => void) | undefined
 
+  const output = document.getElementById("output")!
   const prompt = document.getElementById("prompt")!
   const submit = document.getElementById("submit") as HTMLButtonElement
   const input = document.getElementById("input") as HTMLInputElement
@@ -102,6 +179,10 @@ const data = entry.data
     return new Promise((resolve) => setTimeout(resolve, ms))
   }
 
+  function scroll(): void {
+    output.scroll({ top: output.scrollHeight })
+  }
+
   function error(): void {
     const fragment = template.content.cloneNode(true) as DocumentFragment
     const displayElement = fragment.firstElementChild!
@@ -110,7 +191,8 @@ const data = entry.data
 
     headingElement.remove()
     messageElement.textContent = "Please try again..."
-    prompt.before(displayElement)
+    output.append(displayElement)
+    scroll()
   }
 
   function end(): void {
@@ -121,7 +203,8 @@ const data = entry.data
 
     headingElement.textContent = "The End"
     messageElement.remove()
-    prompt.before(displayElement)
+    output.append(displayElement)
+    scroll()
 
     input.disabled = true
     submit.disabled = true
@@ -137,11 +220,13 @@ const data = entry.data
     const messageElement = displayElement.lastElementChild!
 
     headingElement.textContent = heading
-    prompt.before(displayElement)
+    output.append(displayElement)
+    scroll()
 
     for (const character of message) {
       messageElement.textContent += character
-      await sleep(1)
+      scroll()
+      await sleep(10)
     }
 
     input.disabled = false
