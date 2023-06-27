@@ -13,7 +13,7 @@
     "check:astro": "astro check",
     "check:tsc": "tsc --noEmit",
     "clean": "rimraf ./.astro/ ./dist/",
-    "format": "prettier --write ./.*.json ./*.{json,ts,md} ./src/**/*.{ts,css,astro,md,yaml}",
+    "format": "prettier --write ./.*.json ./*.{json,ts,md} ./.github/**/*.yaml ./src/**/*.{ts,css,astro,md,yaml}",
     "lint": "npm run lint:eslint && npm run lint:stylelint",
     "lint:eslint": "eslint --fix ./*.ts ./src/**/*.{ts,astro}",
     "lint:stylelint": "stylelint --fix ./src/**/*.{css,astro}",
