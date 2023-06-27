@@ -207,7 +207,7 @@ const data = entry.data
     const messageElement = displayElement.lastElementChild!
 
     headingElement.textContent = "The End"
-    messageElement.remove()
+    messageElement.textContent = "Reload the page to play again."
     output.append(displayElement)
     scroll()
 
