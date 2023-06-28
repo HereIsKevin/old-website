@@ -79,5 +79,7 @@ export type Props = HTMLAttributes<"header">
 
   if (window.localStorage.getItem("egg") === "enabled") {
     egg.hidden = false
+  } else {
+    egg.remove()
   }
 </script>

@@ -343,9 +343,10 @@ const data = entry.data
   const message = document.getElementById("message")!
 
   if (window.localStorage.getItem("egg") === "enabled") {
+    message.remove()
     game.hidden = false
-    message.hidden = true
-
     new Game(window.data).run()
+  } else {
+    game.remove()
   }
 </script>
