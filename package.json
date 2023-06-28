@@ -8,7 +8,7 @@
   "author": "Kevin Feng",
   "type": "module",
   "scripts": {
-    "build": "npm run check && astro build",
+    "build": "astro build",
     "check": "npm run check:astro && npm run check:tsc",
     "check:astro": "astro check",
     "check:tsc": "tsc --noEmit",
@@ -22,13 +22,15 @@
     "watch:astro": "astro check --watch",
     "watch:tsc": "tsc --noEmit --watch --preserveWatchOutput"
   },
-  "devDependencies": {
-    "@astrojs/ts-plugin": "^1.0.10",
+  "dependencies": {
     "@fontsource/jetbrains-mono": "^5.0.3",
     "@fontsource/lato": "^5.0.3",
+    "astro": "^2.7.1"
+  },
+  "devDependencies": {
+    "@astrojs/ts-plugin": "^1.0.10",
     "@typescript-eslint/eslint-plugin": "^5.60.1",
     "@typescript-eslint/parser": "^5.60.1",
-    "astro": "^2.7.1",
     "eslint": "^8.43.0",
     "eslint-plugin-astro": "^0.27.2",
     "postcss-html": "^1.5.0",

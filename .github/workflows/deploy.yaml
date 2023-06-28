@@ -17,15 +17,32 @@ jobs:
     steps:
       - name: Checkout repository with git
         uses: actions/checkout@v3
-      - name: Install, build, and upload site
-        uses: withastro/action@v0
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: latest
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build site
+        run: npm run build
+
+      - name: Upload GitHub Pages artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: "./dist/"
 
   deploy:
     needs: build
     runs-on: ubuntu-latest
+
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
