@@ -1,6 +1,7 @@
 {
   "astroAllowShorthand": false,
   "semi": false,
+  "proseWrap": "never",
   "overrides": [
     {
       "files": ["*.yaml"],
