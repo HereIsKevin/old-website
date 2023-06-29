@@ -97,7 +97,7 @@ import HeroPage from "../layouts/HeroPage.astro"
 
   function nextMessage(): void {
     if (timeout !== undefined) {
-      clearTimeout(timeout)
+      window.clearTimeout(timeout)
       timeout = undefined
     }
 
@@ -109,7 +109,7 @@ import HeroPage from "../layouts/HeroPage.astro"
     }
 
     if (message.delay !== undefined) {
-      timeout = setTimeout(nextMessage, message.delay)
+      timeout = window.setTimeout(nextMessage, message.delay)
     }
 
     description.textContent = message.value
