@@ -9,12 +9,12 @@ import "../styles/global.css"
 
 export interface Props {
   title: string
-  image?: string
+  background?: string
 }
 
-const { title, image = "/voronoi.svg" } = Astro.props
+const { title, background = "voronoi" } = Astro.props
 
-const heroImage = `url("${image}")`
+const heroBackground = `url("/backgrounds/${background}.svg")`
 const hasContent = Astro.slots.has("default")
 ---
 
@@ -48,7 +48,7 @@ const hasContent = Astro.slots.has("default")
   </body>
 </html>
 
-<style define:vars={{ "hero-image": heroImage }}>
+<style define:vars={{ "hero-background": heroBackground }}>
   #header {
     position: fixed;
     z-index: 1;
@@ -72,7 +72,7 @@ const hasContent = Astro.slots.has("default")
 
     background-attachment: fixed;
     background-color: var(--color-secondary);
-    background-image: var(--hero-image);
+    background-image: var(--hero-background);
     background-position: center;
     background-size: cover;
     color: var(--color-white);

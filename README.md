@@ -20,7 +20,7 @@ However, this time, I procrastinated on making changes until nearly a year later
 
 ## Used Technologies
 
-This website relies on quite a bit of open-source technology, more than Astro and TypeScript. PostCSS, Prettier, ESLint, and Stylelint are only a few. For example, this [Voronoi Editor](https://voronoi-editor.web.app/) generated the page backgrounds.
+This website relies on quite a bit of open-source technology, more than Astro and TypeScript. PostCSS, Prettier, ESLint, and Stylelint are only a few. For example, this [Voronoi Editor](https://voronoi-editor.web.app/) generated the some of the page backgrounds, while closed-source tools like [Visiwig](https://www.visiwig.com/) generated the rest.
 
 ## License
 
