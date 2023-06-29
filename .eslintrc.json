@@ -13,7 +13,8 @@
     "plugin:astro/recommended"
   ],
   "rules": {
-    "@typescript-eslint/no-unsafe-assignment": "off"
+    "@typescript-eslint/no-unsafe-assignment": "off",
+    "@typescript-eslint/triple-slash-reference": "off"
   },
   "overrides": [
     {
