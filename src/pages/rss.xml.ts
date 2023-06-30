@@ -8,6 +8,7 @@ export const get: APIRoute = async ({ site }) =>
   rss({
     title: "Kevin's Blog",
     description: "Thoughts, ideas, and rants from an aspiring developer.",
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     site: site!.toString(),
     items: (await getCollection("blog", ({ id }) => !id.startsWith("old/")))
       .map((post) => ({
@@ -17,5 +18,4 @@ export const get: APIRoute = async ({ site }) =>
         link: `/blog/${post.slug}`,
       }))
       .sort((a, b) => b.pubDate.valueOf() - a.pubDate.valueOf()),
-    stylesheet: "/rss/styles.xsl",
   })
