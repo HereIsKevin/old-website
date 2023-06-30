@@ -6,10 +6,13 @@ export type Props = HTMLAttributes<"footer">
 
 <footer {...Astro.props}>
   <p>&copy; 2023 Kevin Feng</p>
+  <span class="spacer"></span>
+  <a href="/rss.xml">RSS</a>
 </footer>
 
 <style>
   footer {
+    display: flex;
     padding: 20px;
 
     background-color: var(--color-background);
@@ -21,8 +24,38 @@ export type Props = HTMLAttributes<"footer">
 
   p {
     margin: 0;
-    text-align: center;
-
     font-size: var(--size-small);
+  }
+
+  .spacer {
+    flex-grow: 1;
+  }
+
+  a {
+    font-size: var(--size-small);
+    color: var(--color-primary);
+    text-decoration-color: transparent;
+    text-decoration-line: none;
+    text-underline-offset: 5px;
+
+    transition-property: text-decoration-color text-underline-offset;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+  }
+
+  a:hover {
+    text-decoration-color: var(--color-primary);
+    text-decoration-line: underline;
+    text-underline-offset: 2px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    a {
+      color: var(--color-secondary);
+    }
+
+    a:hover {
+      text-decoration-color: var(--color-secondary);
+    }
   }
 </style>
