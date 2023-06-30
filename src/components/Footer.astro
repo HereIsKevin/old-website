@@ -5,21 +5,30 @@ export type Props = HTMLAttributes<"footer">
 ---
 
 <footer {...Astro.props}>
-  <p>&copy; 2023 Kevin Feng</p>
-  <span class="spacer"></span>
-  <a href="/rss.xml">RSS</a>
+  <div class="container">
+    <p>&copy; 2023 Kevin Feng</p>
+    <span class="spacer"></span>
+    <a href="/rss.xml">RSS</a>
+  </div>
 </footer>
 
 <style>
   footer {
-    display: flex;
-    padding: 20px;
-
     background-color: var(--color-background);
     color: var(--color-foreground);
     border-top-width: 1px;
     border-top-style: solid;
     border-top-color: var(--color-border);
+  }
+
+  .container {
+    display: flex;
+    margin: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 25px;
+    padding-right: 25px;
+    max-width: var(--page-width);
   }
 
   p {
