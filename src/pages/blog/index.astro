@@ -106,6 +106,17 @@ const oldPosts = (
       text-decoration-color: var(--color-secondary);
     }
   }
+
+  @media screen and (width <= 600px) {
+    :global(time) {
+      display: block;
+    }
+
+    a {
+      display: block;
+      margin-bottom: 10px;
+    }
+  }
 </style>
 
 <script>
