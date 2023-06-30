@@ -1,0 +1,125 @@
+---
+import { getCollection } from "astro:content"
+
+import DateTime from "../../components/DateTime.astro"
+import Page from "../../layouts/Page.astro"
+
+const posts = (
+  await getCollection("blog", ({ id }) => !id.startsWith("old/"))
+).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+
+const oldPosts = (
+  await getCollection("blog", ({ id }) => id.startsWith("old/"))
+).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+---
+
+<Page title="Kevin's Blog">
+  <h1>Kevin's Blog</h1>
+  <div class="posts">
+    <ul>
+      {
+        posts.map((post) => (
+          <li>
+            <DateTime date={post.data.pubDate} />
+            <a href={`/blog/${post.slug}`}>{post.data.title}</a>
+          </li>
+        ))
+      }
+    </ul>
+    <details id="old-posts">
+      <summary>Old Posts</summary>
+      <ul>
+        {
+          oldPosts.map((post) => (
+            <li>
+              <DateTime date={post.data.pubDate} />
+              <a href={`/blog/${post.slug}`}>{post.data.title}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </details>
+  </div>
+</Page>
+
+<style>
+  h1 {
+    margin: 0;
+    margin-top: 50px;
+    font-size: 2.5rem;
+  }
+
+  .posts {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  details {
+    margin-top: 30px;
+    font-size: 1.3rem;
+  }
+
+  summary {
+    margin-bottom: 10px;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li {
+    font-size: 1.3rem;
+    line-height: calc(1.3rem * 2);
+  }
+
+  :global(time) {
+    display: inline-block;
+    margin-right: 25px;
+    min-width: 150px;
+  }
+
+  a {
+    color: var(--color-primary);
+    text-decoration-color: transparent;
+    text-decoration-line: none;
+    text-underline-offset: 5px;
+
+    transition-property: text-decoration-color text-underline-offset;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+  }
+
+  a:hover {
+    text-decoration-color: var(--color-primary);
+    text-decoration-line: underline;
+    text-underline-offset: 2px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    a {
+      color: var(--color-secondary);
+    }
+
+    a:hover {
+      text-decoration-color: var(--color-secondary);
+    }
+  }
+</style>
+
+<script>
+  const oldPosts = document.getElementById("old-posts") as HTMLDetailsElement
+
+  if (window.localStorage.getItem("oldPosts") === "open") {
+    oldPosts.open = true
+  }
+
+  oldPosts.addEventListener("toggle", () => {
+    if (oldPosts.open) {
+      window.localStorage.setItem("oldPosts", "open")
+    } else {
+      window.localStorage.removeItem("oldPosts")
+    }
+  })
+</script>
