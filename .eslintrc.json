@@ -1,21 +1,19 @@
 {
   "root": true,
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "project": ["./tsconfig.json"]
-  },
-  "plugins": ["@typescript-eslint"],
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "plugin:@typescript-eslint/strict",
-    "plugin:astro/recommended"
+    "plugin:astro/recommended",
+    "plugin:astro/jsx-a11y-recommended",
+    "plugin:astro/jsx-a11y-strict",
+    "plugin:tailwindcss/recommended"
   ],
-  "rules": {
-    "@typescript-eslint/no-unsafe-assignment": "off",
-    "@typescript-eslint/no-unsafe-return": "off",
-    "@typescript-eslint/triple-slash-reference": "off"
+  "plugins": ["@typescript-eslint"],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": true
   },
   "overrides": [
     {

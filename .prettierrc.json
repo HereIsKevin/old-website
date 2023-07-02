@@ -1,13 +1,7 @@
 {
-  "astroAllowShorthand": false,
+  "pluginSearchDirs": false,
+  "plugins": ["prettier-plugin-astro", "prettier-plugin-tailwindcss"],
   "semi": false,
   "proseWrap": "never",
-  "overrides": [
-    {
-      "files": ["*.yaml"],
-      "options": {
-        "proseWrap": "always"
-      }
-    }
-  ]
+  "astroAllowShorthand": true
 }

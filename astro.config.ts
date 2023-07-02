@@ -1,4 +1,4 @@
-import { defineConfig } from "astro/config"
+import { defineConfig, sharpImageService } from "astro/config"
 
 import sitemap from "@astrojs/sitemap"
 import tailwind from "@astrojs/tailwind"
@@ -9,6 +9,9 @@ export default defineConfig({
   compressHTML: true,
   build: {
     inlineStylesheets: "auto",
+  },
+  image: {
+    service: sharpImageService(),
   },
   integrations: [sitemap(), tailwind()],
   vite: {

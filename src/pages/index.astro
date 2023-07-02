@@ -1,30 +1,15 @@
 ---
-import HeroPage from "../layouts/HeroPage.astro"
 ---
 
-<HeroPage title="Hi, I'm Kevin">
-  <Fragment slot="hero">
-    <h1 class="title">Hi, I'm Kevin!</h1>
-    <p class="description">
-      I'm an aspiring developer and student, and I love open source, Rust, and
-      (ironically) Sublime Text. Some hobbies I enjoy include violin, 3D
-      printing, and programming. Go on, feel free to check out the rest of this
-      site.
-    </p>
-  </Fragment>
-</HeroPage>
-
-<style>
-  .title {
-    margin: 0;
-    margin-top: 60px;
-    font-size: var(--size-large);
-  }
-
-  .description {
-    margin: 0;
-    margin-bottom: 15lvh;
-    font-size: var(--size-medium);
-    line-height: calc(var(--size-medium) * 1.5);
-  }
-</style>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <body>
+    <h1>Astro</h1>
+  </body>
+</html>
