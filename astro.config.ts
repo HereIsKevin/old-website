@@ -1,6 +1,7 @@
 import { defineConfig, sharpImageService } from "astro/config"
 
 import sitemap from "@astrojs/sitemap"
+import svelte from "@astrojs/svelte"
 import tailwind from "@astrojs/tailwind"
 
 // https://astro.build/config
@@ -13,7 +14,13 @@ export default defineConfig({
   image: {
     service: sharpImageService(),
   },
-  integrations: [sitemap(), tailwind()],
+  integrations: [
+    sitemap(),
+    svelte(),
+    tailwind({
+      applyBaseStyles: false,
+    }),
+  ],
   vite: {
     build: {
       target: "modules",

@@ -13,8 +13,8 @@
     "check:astro": "astro check",
     "check:tsc": "tsc --noEmit",
     "clean": "rimraf ./.astro/ ./dist/",
-    "format": "prettier --write --ignore-path ./.gitignore \"./**/*.{astro,json,md,ts}\"",
-    "lint": "eslint --fix --ignore-path ./.gitignore \"./**/*.{astro,ts}\"",
+    "format": "prettier --write --ignore-path ./.gitignore \"./**/*.{astro,js,json,md,svelte,ts}\"",
+    "lint": "eslint --fix --ignore-path ./.gitignore \"./**/*.{astro,svelte,ts}\"",
     "preview": "astro preview",
     "start": "astro dev",
     "watch:astro": "astro check --watch",
@@ -23,6 +23,7 @@
   "dependencies": {
     "@astrojs/rss": "^2.4.3",
     "@astrojs/sitemap": "^1.3.3",
+    "@astrojs/svelte": "^3.1.0",
     "@astrojs/tailwind": "^4.0.0",
     "@fontsource/jetbrains-mono": "^5.0.3",
     "@fontsource/lato": "^5.0.3",
@@ -30,6 +31,7 @@
     "@tailwindcss/typography": "^0.5.9",
     "astro": "^2.7.2",
     "sharp": "^0.32.1",
+    "svelte": "^4.0.1",
     "tailwindcss": "^3.3.2"
   },
   "devDependencies": {
@@ -39,9 +41,11 @@
     "eslint": "^8.44.0",
     "eslint-plugin-astro": "^0.27.2",
     "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-svelte": "^2.32.2",
     "eslint-plugin-tailwindcss": "^3.13.0",
     "prettier": "^2.8.8",
     "prettier-plugin-astro": "^0.10.0",
+    "prettier-plugin-svelte": "^2.10.1",
     "prettier-plugin-tailwindcss": "^0.3.0",
     "rimraf": "^5.0.1",
     "typescript": "^5.1.6"

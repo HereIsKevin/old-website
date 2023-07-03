@@ -1,6 +1,10 @@
 {
   "pluginSearchDirs": false,
-  "plugins": ["prettier-plugin-astro", "prettier-plugin-tailwindcss"],
+  "plugins": [
+    "prettier-plugin-astro",
+    "prettier-plugin-svelte",
+    "prettier-plugin-tailwindcss"
+  ],
   "semi": false,
   "proseWrap": "never",
   "astroAllowShorthand": true

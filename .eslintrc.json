@@ -8,6 +8,7 @@
     "plugin:astro/recommended",
     "plugin:astro/jsx-a11y-recommended",
     "plugin:astro/jsx-a11y-strict",
+    "plugin:svelte/recommended",
     "plugin:tailwindcss/recommended"
   ],
   "plugins": ["@typescript-eslint"],
@@ -22,6 +23,14 @@
       "parserOptions": {
         "parser": "@typescript-eslint/parser",
         "extraFileExtensions": [".astro"]
+      }
+    },
+    {
+      "files": ["*.svelte"],
+      "parser": "svelte-eslint-parser",
+      "parserOptions": {
+        "parser": "@typescript-eslint/parser",
+        "extraFileExtensions": [".svelte"]
       }
     }
   ]
